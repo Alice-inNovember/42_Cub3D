@@ -12,8 +12,10 @@ SRCS_DIR	=	srcs
 OBJS_DIR	=	objs
 LIBS_DIR	=	libs
 #FILES
-SRCS		=	${SRCS_DIR}/main.c
-OBJFILES	=	${SRCS:.c=.o}
+SRCS		=	$(SRCS_DIR)/main.c \
+				$(SRCS_DIR)/util.c \
+				$(SRCS_DIR)/init_input.c
+OBJFILES	=	$(SRCS:.c=.o)
 OBJS	 	=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(OBJFILES))
 LIBGNL		=	$(LIBS_DIR)/GNL/LIBGNL.a
 
