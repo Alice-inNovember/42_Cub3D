@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/10 15:28:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/10 17:20:27 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_input
 	char	*we_png;
 	char	*ea_png;
 	char	*floor;
-	char	*sky;
+	char	*ceiling;
 	char	**map;
 }	t_input;
 
