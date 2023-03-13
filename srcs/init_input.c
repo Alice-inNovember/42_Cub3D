@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/10 17:23:42 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/12 17:22:29 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	parse_input(t_data *data, char	**inputstr, size_t i)
 		(void)(0);
 	else if (inputstr[i][0] == 'C')
 		(void)(0);
-	
+	(void)data;
 }
 
 void	init_input(t_data *data, char *input_file)
