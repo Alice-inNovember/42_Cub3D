@@ -16,6 +16,7 @@ LIBS_DIR	=	libs
 SRCS		=	$(SRCS_DIR)/main.c \
 				$(SRCS_DIR)/util1.c \
 				$(SRCS_DIR)/util2.c \
+				$(SRCS_DIR)/init_libx.c \
 				$(SRCS_DIR)/init_input.c \
 				$(SRCS_DIR)/init_map.c
 OBJFILES	=	$(SRCS:.c=.o)
