@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/13 17:57:23 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:49:21 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
 	i = 0;
 	while (inputstr[i])
 	{
-		inputstr[i][ft_strlen(inputstr[i]) - 1] = 0;
+		if (inputstr[i][ft_strlen(inputstr[i]) - 1] == '\n')
+			inputstr[i][ft_strlen(inputstr[i]) - 1] = 0;
 		if (parse_input(data, inputstr, i))
 			err_exit("Error\n : Map not valid");
 		i++;

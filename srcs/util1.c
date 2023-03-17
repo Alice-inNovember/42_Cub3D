@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util.c                                             :+:      :+:    :+:   */
+/*   util1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/13 12:49:40 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:44:11 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ void	*ft_malloc(size_t size)
 	return (temp);
 }
 
-void	ft_bzero(void *s, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 
 	i = 0;
 	while (i < len)
 	{
-		((unsigned char *)s)[i] = (unsigned char)0;
+		((unsigned char *)b)[i] = (unsigned char)c;
 		i++;
 	}
+	return (b);
 }
 
 void	*ft_calloc(size_t count, size_t size)
@@ -53,7 +54,7 @@ void	*ft_calloc(size_t count, size_t size)
 	returnptr = (unsigned char *)malloc(count * size);
 	if (!returnptr)
 		err_exit("Error\n : malloc err");
-	ft_bzero((void *)returnptr, count * size);
+	ft_memset((void *)returnptr, 0, count * size);
 	return ((void *)returnptr);
 }
 

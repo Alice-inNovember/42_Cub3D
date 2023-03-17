@@ -16,7 +16,8 @@ LIBS_DIR	=	libs
 SRCS		=	$(SRCS_DIR)/main.c \
 				$(SRCS_DIR)/util1.c \
 				$(SRCS_DIR)/util2.c \
-				$(SRCS_DIR)/init_input.c
+				$(SRCS_DIR)/init_input.c \
+				$(SRCS_DIR)/init_map.c
 OBJFILES	=	$(SRCS:.c=.o)
 OBJS	 	=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(OBJFILES))
 LIBGNL		=	$(LIBS_DIR)/GNL/LIBGNL.a

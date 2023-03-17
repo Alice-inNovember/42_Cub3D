@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/13 14:05:37 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:41:38 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	init_data(t_data *data, char *input_file)
 {
 	data->input = ft_calloc(1, sizeof(t_input));
 	init_input(data, input_file);
+	data->map = ft_calloc(1, sizeof(t_map));
+	init_map(data);
 }
 
 void	test_input(t_data *data)
@@ -34,9 +36,9 @@ void	test_input(t_data *data)
 	printf("%s\n", data->input->we_png);
 	printf("%s\n", data->input->ceiling);
 	printf("%s\n", data->input->floor);
-	while (data->input->map[i])
+	while (data->map->map[i])
 	{
-		printf("%s\n", data->input->map[i]);
+		printf("%s|\n", data->map->map[i]);
 		i++;
 	}
 }

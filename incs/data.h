@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/10 17:20:27 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:16:07 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_input
 typedef struct s_data
 {
 	t_input	*input;
+	t_map	*map;
 }	t_data;
 
 #endif

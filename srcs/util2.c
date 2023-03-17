@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/13 13:18:07 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:38:20 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ char	*ft_strdup(const char *s1)
 	}
 	returnptr[i] = 0;
 	return (returnptr);
+}
+
+void	ft_strcpy(char *to, char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		to[i] = str[i];
+		i++;
+	}
+	return ;
 }
