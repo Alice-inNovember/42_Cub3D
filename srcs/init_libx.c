@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.h                                             :+:      :+:    :+:   */
+/*   init_libx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 16:01:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 13:40:39 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/03/17 13:37:23 by junlee2           #+#    #+#             */
+/*   Updated: 2023/03/17 13:45:15 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_H
-# define INIT_H
+#include "../libs/MLX/mlx.h"
+#include "../incs/data.h"
+#include "../incs/util.h"
+#include <stddef.h>
 
-# include "data.h"
+void	init_libx(t_data *data)
+{
+	t_libx	*libx;
 
-void	init_libx(t_data *data);
-void	init_input(t_data *data, char *input_file);
-void	init_map(t_data *data);
-
-#endif
+	libx = data->libx;
+	libx->mlx = mlx_init();
+	libx->win_name = ft_strdup("Cub3D");
+	libx->mlx_win = mlx_new_window(libx->mlx, 640, 480, libx->win_name);
+}
