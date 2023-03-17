@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:04:25 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 11:55:27 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 11:57:14 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void	init_map(t_data *data)
 		ft_strcpy(data->map->map[i], data->input->map[i]);
 		i++;
 	}
+	data->map->xsize = maxlen;
+	data->map->ysize = i;
 }

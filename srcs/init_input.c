@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 11:49:21 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 12:41:27 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	**read_file(int idx, int fd)
 	return (input);
 }
 
-int	parse_input(t_data *data, char	**inputstr, size_t i)
+void	parse_input(t_data *data, char	**inputstr, size_t i)
 {
 	if (inputstr[i][0] == 'N' && inputstr[i][1] == 'O')
 		data->input->no_png = ft_strdup(inputstr[i]);
@@ -56,34 +56,34 @@ int	parse_input(t_data *data, char	**inputstr, size_t i)
 	else if (inputstr[i][0] == 'C')
 		data->input->ceiling = ft_strdup(inputstr[i]);
 	else if (!is_set(inputstr[i], "\n 01NSEW"))
-		return (1);
-	return (0);
+		err_exit("Error\n : Map not valid");
 }
 
 void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
 {
-	i = 0;
 	while (inputstr[i])
 	{
-		if (inputstr[i][ft_strlen(inputstr[i]) - 1] == '\n')
+		if (inputstr[i][0] == '\n')
+			(void)0;
+		else if (inputstr[i][ft_strlen(inputstr[i]) - 1] == '\n')
 			inputstr[i][ft_strlen(inputstr[i]) - 1] = 0;
-		if (parse_input(data, inputstr, i))
-			err_exit("Error\n : Map not valid");
+		parse_input(data, inputstr, i);
 		i++;
 	}
 	i = 0;
 	while (inputstr[i + 1])
 		i++;
-	cnt = 0;
 	while (is_set(inputstr[i - cnt], "01 NSEW"))
 		cnt++;
-	data->input->map = ft_calloc(cnt, sizeof(char *));
-	cnt -= 2;
+	if (cnt == 0)
+		err_exit("Error\n : Map not valid");
+	data->input->map = ft_calloc(cnt + 1, sizeof(char *));
+	cnt --;
 	while (cnt != 0)
 	{
 		data->input->map[cnt] = ft_strdup(inputstr[i]);
-		i--;
 		cnt--;
+		i--;
 	}
 	data->input->map[cnt] = ft_strdup(inputstr[i]);
 }
