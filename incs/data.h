@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 11:16:07 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 13:21:03 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,10 @@ typedef struct s_data
 	t_input	*input;
 	t_map	*map;
 }	t_data;
+
+typedef struct s_map_obj
+{
+	int	player;
+}	t_map_obj;
 
 #endif
