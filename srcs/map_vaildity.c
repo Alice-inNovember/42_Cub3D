@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   map_vaildity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 10:02:26 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 13:54:25 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/data.h"
 #include "../incs/map_vaildity.h"
+#include "stdio.h"
+#include "../incs/util.h"
 
 int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 {
@@ -64,10 +66,10 @@ int	check_four_point(t_map *map_data, int y, int x)
 		return (0);
 	if (y > 0 && map_data->map[y - 1][x] != '1'
 		&& map_data->map[y - 1][x] != ' ')
-		return (1);
+			return (1);
 	if (y < map_data->ysize - 2 && map_data->map[y + 1][x] != '1'
-		&& map_data->map[y + 1][x] == ' ')
-		return (1);
+		&& map_data->map[y + 1][x] != ' ')
+			return (1);
 	if (x > 0 && map_data->map[y][x - 1] != '1'
 		&& map_data->map[y][x - 1] != ' ')
 		return (1);
