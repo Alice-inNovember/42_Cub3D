@@ -21,8 +21,13 @@ SRCS		=	$(SRCS_DIR)/main.c \
 				$(SRCS_DIR)/init_map.c \
 				$(SRCS_DIR)/init_texture.c \
 				$(SRCS_DIR)/init_event.c \
-				$(SRCS_DIR)/renderer.c \
-				$(SRCS_DIR)/map_vaildity.c
+				$(SRCS_DIR)/map_vaildity.c \
+				$(SRCS_DIR)/find_minimap.c \
+				$(SRCS_DIR)/mini_insert.c \
+				$(SRCS_DIR)/mini_obj_insert.c \
+				$(SRCS_DIR)/minimap.c \
+				$(SRCS_DIR)/renderer.c
+
 OBJFILES	=	$(SRCS:.c=.o)
 OBJS	 	=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(OBJFILES))
 LIBGNL		=	$(LIBS_DIR)/GNL/LIBGNL.a
