@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 13:52:34 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/17 15:48:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@
 # define GREEN 1
 # define BLUE 2
 
-typedef struct s_rgb
-{
-	int	red;
-	int	green;
-	int	blue;
-}	t_rgb;
+typedef int	t_rgb;
 
 typedef struct s_map
 {
@@ -50,6 +45,16 @@ typedef struct s_libx
 	void	*mlx_win;
 	char	*win_name;
 }	t_libx;
+
+typedef struct s_texture
+{
+	void	*no_img;
+	void	*so_img;
+	void	*we_img;
+	void	*ea_img;
+	t_rgb	floor;
+	t_rgb	ceiling;
+}	t_texture;
 
 typedef struct s_data
 {
