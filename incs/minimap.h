@@ -6,15 +6,6 @@
 #include "data.h"
 #include "../libs/MLX/mlx.h"
 
-typedef struct s_img_data
-{
-	void 	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_img_data;
-
 typedef struct s_mini_obj
 {
 	char		**map;
