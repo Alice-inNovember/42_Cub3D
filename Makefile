@@ -19,6 +19,9 @@ SRCS		=	$(SRCS_DIR)/main.c \
 				$(SRCS_DIR)/init_libx.c \
 				$(SRCS_DIR)/init_input.c \
 				$(SRCS_DIR)/init_map.c \
+				$(SRCS_DIR)/init_texture.c \
+				$(SRCS_DIR)/init_event.c \
+				$(SRCS_DIR)/renderer.c \
 				$(SRCS_DIR)/map_vaildity.c
 OBJFILES	=	$(SRCS:.c=.o)
 OBJS	 	=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(OBJFILES))
