@@ -17,7 +17,7 @@ int	minimap(t_map *map_data)
 	return (0);
 }
 
-void	my_mlx_pixel_put(t_img_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -58,11 +58,11 @@ int	new_image_minimap(t_mini *mini)
 	return (0);
 }
 
-int	new_img(char **map, t_img_data *img, void *mlx)
+int	new_img(char **map, t_image *img, void *mlx)
 {
 	int	i;
 	int	j;
-	void	(*fp[2])(t_img_data *, int, int);
+	void	(*fp[2])(t_image *, int, int);
 
 	img->img = mlx_new_image(mlx, 150, 150);
 	img->addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel), &(img->line_length), &(img->endian));
@@ -81,14 +81,14 @@ int	new_img(char **map, t_img_data *img, void *mlx)
 	return (0);
 }
 
-void	init_fp(void (*fp[2])(t_img_data *, int, int))
+void	init_fp(void (*fp[2])(t_image *, int, int))
 {
 	fp[0] = mini_draw_wall;
 	fp[1] = mini_draw_floor;
 	fp[2] = mini_draw_out;
 }
 
-void	mini_draw_wall(t_img_data *img, int y, int x)
+void	mini_draw_wall(t_image *img, int y, int x)
 {
 	int	i;
 	int	j;
@@ -109,7 +109,7 @@ void	mini_draw_wall(t_img_data *img, int y, int x)
 	}
 }
 
-void	mini_draw_floor(t_img_data *img, int y, int x)
+void	mini_draw_floor(t_image *img, int y, int x)
 {
 	int	i;
 	int	j;
@@ -130,7 +130,7 @@ void	mini_draw_floor(t_img_data *img, int y, int x)
 	}
 }
 
-void	mini_draw_out(t_img_data *img, int y, int x)
+void	mini_draw_out(t_image *img, int y, int x)
 {
 	int	i;
 	int	j;

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.h                                             :+:      :+:    :+:   */
+/*   init_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 16:01:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 19:05:29 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/03/20 19:01:41 by junlee2           #+#    #+#             */
+/*   Updated: 2023/03/20 19:04:07 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_H
-# define INIT_H
+#include "../../incs/data.h"
+#include "../../incs/util.h"
 
-# include "data.h"
-
-void	init_libx(t_data *data);
-void	init_input(t_data *data, char *input_file);
-void	init_map(t_data *data);
-void	init_texture(t_data *data);
-void	init_event(t_data *data);
-void	init_player(t_data *data);
-void	init_screen(t_data *data);
-
-#endif
+void	init_player(t_data *data)
+{
+	data->player->pos_x = 3;
+	data->player->pos_y = 3;
+	data->player->dir_x = -1;
+	data->player->dir_y = 0;
+	data->player->plane_x = 0;
+	data->player->plane_y = 0.66;
+}

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 17:17:25 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/20 18:58:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,21 +66,21 @@ typedef struct s_libx
 	char	*win_name;
 }	t_libx;
 
-typedef struct s_img_data
+typedef struct s_image
 {
-	void 	*img;
+	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}	t_img_data;
+}	t_image;
 
 typedef struct s_texture
 {
-	void	*wall_n;
-	void	*wall_s;
-	void	*wall_e;
-	void	*wall_w;
+	t_image	*wall_n;
+	t_image	*wall_s;
+	t_image	*wall_e;
+	t_image	*wall_w;
 	t_rgb	floor;
 	t_rgb	ceiling;
 }	t_texture;
@@ -102,6 +102,7 @@ typedef struct s_data
 	t_map		*map;
 	t_texture	*texture;
 	t_player	*player;
+	t_image		*screen;
 }	t_data;
 
 typedef struct s_map_obj

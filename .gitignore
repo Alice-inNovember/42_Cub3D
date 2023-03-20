@@ -1,3 +1,7 @@
 a.out
 libmlx.dylib
 srcs/test.c
+*.o
+*.a
+cub3D
+*.swiftsourceinfo

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 17:56:22 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/20 19:06:06 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	init_data(t_data *data, char *input_file)
 	init_map(data);
 	data->texture = ft_calloc(1, sizeof(t_texture));
 	init_texture(data);
+	data->player = ft_calloc(1, sizeof(t_player));
+	init_player(data);
+	data->screen = ft_calloc(1, sizeof(t_image));
+	init_screen(data);
 }
 
 int	main(int argc, char **argv)

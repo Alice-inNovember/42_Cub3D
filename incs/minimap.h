@@ -9,7 +9,7 @@
 typedef struct s_mini_obj
 {
 	char		**map;
-	t_img_data	img;
+	t_image	img;
 }	t_mini_obj;
 
 typedef struct s_mini
@@ -33,12 +33,12 @@ void	mini_obj_map_insert(t_mini_obj **mini_obj, t_map *map_data, t_mini *mini);
 void	find_minimap(t_mini *mini);
 void	print_minimap(t_mini_obj mini_obj);
 
-void	my_mlx_pixel_put(t_img_data *data, int x, int y, int color);
+void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
 int		new_image_minimap(t_mini *mini);
-int		new_img(char **map, t_img_data *img, void *mlx);
-void	init_fp(void (*fp[2])(t_img_data *, int, int));
-void	mini_draw_wall(t_img_data *img, int y, int x);
-void	mini_draw_floor(t_img_data *img, int y, int x);
-void	mini_draw_out(t_img_data *img, int y, int x);
+int		new_img(char **map, t_image *img, void *mlx);
+void	init_fp(void (*fp[2])(t_image *, int, int));
+void	mini_draw_wall(t_image *img, int y, int x);
+void	mini_draw_floor(t_image *img, int y, int x);
+void	mini_draw_out(t_image *img, int y, int x);
 
 #endif

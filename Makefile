@@ -29,6 +29,8 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(INITIAL_DIR)/init_libx.c \
 					$(INITIAL_DIR)/init_map.c \
 					$(INITIAL_DIR)/init_texture.c \
+					$(INITIAL_DIR)/init_player.c \
+					$(INITIAL_DIR)/init_screen.c \
 					$(MINIMAP_DIR)/find_minimap.c \
 					$(MINIMAP_DIR)/mini_insert.c \
 					$(MINIMAP_DIR)/mini_obj_insert.c \
@@ -52,6 +54,9 @@ LCyan		=	"\033[1;36m"
 INFO		=
 
 all : $(NAME)
+
+mlx :
+	@$(MAKE) -C $(LIBS_DIR)/MLX
 
 $(NAME) : $(OBJS)
 	$(eval INFO = $(shell echo $(LBlue)Compiling$(Color_Off)))
