@@ -1,4 +1,4 @@
-#include "../incs/minimap.h"
+#include "../../incs/minimap.h"
 
 int	mini_insert(t_map *map_data, t_mini *mini)
 {

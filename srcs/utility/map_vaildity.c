@@ -6,14 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 14:28:19 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/20 17:16:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/data.h"
-#include "../incs/map_vaildity.h"
+#include "../../incs/data.h"
+#include "../../incs/map_vaildity.h"
 #include "stdio.h"
-#include "../incs/util.h"
+#include "../../incs/util.h"
 
 int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 {

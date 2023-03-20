@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.h                                             :+:      :+:    :+:   */
+/*   init_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 16:01:20 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 15:41:29 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/03/18 14:23:45 by junlee2           #+#    #+#             */
+/*   Updated: 2023/03/20 17:16:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_H
-# define INIT_H
+#include "../../libs/MLX/mlx.h"
+#include "../../incs/data.h"
 
-# include "data.h"
+void	init_texture(t_data *data)
+{
+	void	*(*png2image)(void *, char *, int *, int *);
 
-void	init_libx(t_data *data);
-void	init_input(t_data *data, char *input_file);
-void	init_map(t_data *data);
-void	init_texture(t_data *data);
-void	init_event(t_data *data);
-
-#endif
+	png2image = mlx_png_file_to_image;
+	(void)data;
+}

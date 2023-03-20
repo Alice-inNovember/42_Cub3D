@@ -1,4 +1,4 @@
-#include "../incs/minimap.h"
+#include "../../incs/minimap.h"
 
 void	find_minimap(t_mini *mini)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/18 15:47:15 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/20 17:17:25 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@
 # define KEY_S		1
 # define KEY_D		2
 # define KEY_ESC	53
+# define KEY_LEFT	123
+# define KEY_RIGHT	124
+# define KEY_DOWN	125
+# define KEY_UP		126
 
 # define ON_KEYDOWN		2
 # define ON_KEYUP		3
@@ -81,12 +85,23 @@ typedef struct s_texture
 	t_rgb	ceiling;
 }	t_texture;
 
+typedef struct s_player
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+}	t_player;
+
 typedef struct s_data
 {
 	t_libx		*libx;
 	t_input		*input;
 	t_map		*map;
 	t_texture	*texture;
+	t_player	*player;
 }	t_data;
 
 typedef struct s_map_obj

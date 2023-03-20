@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 12:41:27 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/20 17:16:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include "../incs/data.h"
-#include "../incs/util.h"
-#include "../libs/GNL/get_next_line.h"
+#include "../../incs/data.h"
+#include "../../incs/util.h"
+#include "../../libs/GNL/get_next_line.h"
 
 char	**read_file(int idx, int fd)
 {

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_texture.c                                     :+:      :+:    :+:   */
+/*   player_controll.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 14:23:45 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/18 15:21:22 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
+/*   Updated: 2023/03/20 15:43:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libs/MLX/mlx.h"
-#include "../incs/data.h"
+#ifndef PLAYER_CONTROLL
+# define PLAYER_CONTROLL
 
-void	init_texture(t_data *data)
-{
-	void	*(*png2image)(void *, char *, int *, int *);
+# include "data.h"
 
-	png2image = mlx_png_file_to_image;
-	(void)data;
-}
+int		key_hook(int keycode, t_data *data);
+int		red_button_hook(t_data *data);
+void	player_rotate(t_data *data, int speed);
+void	player_move(t_data *data, int speed);
+
+#endif

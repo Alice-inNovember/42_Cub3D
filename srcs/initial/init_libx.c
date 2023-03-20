@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.c                                           :+:      :+:    :+:   */
+/*   init_libx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 14:44:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 14:47:21 by junlee2          ###   ########seoul.kr  */
+/*   Created: 2023/03/17 13:37:23 by junlee2           #+#    #+#             */
+/*   Updated: 2023/03/20 17:16:54 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/data.h"
+#include "../../libs/MLX/mlx.h"
+#include "../../incs/data.h"
+#include "../../incs/util.h"
+#include <stddef.h>
 
-t_rgb	create_trgb(int t, int r, int g, int b)
+void	init_libx(t_data *data)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
-}
+	t_libx	*libx;
 
-int	get_t(t_rgb trgb)
-{
-	return ((trgb >> 24) & 0xFF);
-}
-
-int	get_r(t_rgb trgb)
-{
-	return ((trgb >> 16) & 0xFF);
-}
-
-int	get_g(t_rgb trgb)
-{
-	return ((trgb >> 8) & 0xFF);
-}
-
-int	get_b(t_rgb trgb)
-{
-	return (trgb & 0xFF);
+	libx = data->libx;
+	libx->mlx = mlx_init();
+	libx->win_name = ft_strdup("Cub3D");
+	libx->mlx_win = mlx_new_window(libx->mlx, 640, 480, libx->win_name);
 }
