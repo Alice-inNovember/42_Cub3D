@@ -36,50 +36,104 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(UTILITY_DIR)/colors.c\
 					$(UTILITY_DIR)/map_vaildity.c \
 					$(UTILITY_DIR)/util1.c \
-					$(UTILITY_DIR)/util2.c
+					$(UTILITY_DIR)/util2.c \
+					$(UTILITY_DIR)/test.c
 MAIN_OBJ		=	$(MAIN_SRCS:.c=.o)
 OBJS			=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(MAIN_OBJ))
 LIBGNL			=	$(LIBS_DIR)/GNL/LIBGNL.a
 LIBMLX			=	$(LIBS_DIR)/MLX/libmlx.dylib
+#COLOR
+Color_Off	=	"\033[0m"
+LRed		=	"\033[1;31m"
+LGreen		=	"\033[1;32m"
+LBlue		=	"\033[1;34m"
+LPurple		=	"\033[1;35m"
+LCyan		=	"\033[1;36m"
+INFO		=
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(MAKE) -C $(LIBS_DIR)/GNL
-	$(MAKE) -C $(LIBS_DIR)/MLX
-	$(CC) $(CFLAGS) -o $@ $^ $(LIBGNL) $(MLXFLAGS) -L$(LIBS_DIR)/MLX -lmlx
-	-install_name_tool -change libmlx.dylib ./$(LIBMLX) $(NAME)
+	$(eval INFO = $(shell echo $(LBlue)Compiling$(Color_Off)))
+	$(info $(INFO))
+	@$(MAKE) -C $(LIBS_DIR)/GNL
+	$(eval INFO = $(shell echo $(LCyan)libgnl.a "  "✅$(Color_Off)))
+	$(info $(INFO))
+	@$(MAKE) -C $(LIBS_DIR)/MLX
+	$(eval INFO = $(shell echo $(LCyan)mlx.dylib " "✅$(Color_Off)))
+	$(info $(INFO))
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBGNL) $(MLXFLAGS) -L$(LIBS_DIR)/MLX -lmlx
+	@-install_name_tool -change libmlx.dylib ./$(LIBMLX) $(NAME)
+	$(eval INFO = $(shell echo $(LPurple)cub3D "     "✅$(Color_Off)))
+	$(info $(INFO))
+	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
+	$(info $(INFO))
+	$(info )
+	$(eval INFO = $(shell echo $(LBlue)MLX processing...$(Color_Off)))
+	$(info $(INFO))
 
 $(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c | $(OBJS_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(GM_PLAY_OBJ)/%.o : $(GM_PLAY_DIR)/%.c | $(GM_PLAY_OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(INITIAL_OBJ)/%.o : $(INITIAL_DIR)/%.c | $(INITIAL_OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(MINIMAP_OBJ)/%.o : $(MINIMAP_DIR)/%.c | $(MINIMAP_OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(UTILITY_OBJ)/%.o : $(UTILITY_DIR)/%.c | $(UTILITY_OBJ)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_DIR):
-	mkdir -p $(OBJS_DIR)
-	mkdir -p $(GM_PLAY_OBJ)
-	mkdir -p $(INITIAL_OBJ)
-	mkdir -p $(MINIMAP_OBJ)
-	mkdir -p $(UTILITY_OBJ)
+	$(eval INFO = $(shell echo $(LBlue)Create DIR$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(OBJS_DIR)
+	$(eval INFO = $(shell echo $(LCyan)srcs "      "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(GM_PLAY_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)gameplay "  "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(INITIAL_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)initial "   "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(MINIMAP_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)minimap "   "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(UTILITY_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)utility "   "✅$(Color_Off)))
+	$(info $(INFO))
+	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
+	$(info $(INFO))
+	$(info )
 
 clean :
-	$(MAKE) -C $(LIBS_DIR)/GNL clean
-	$(MAKE) -C $(LIBS_DIR)/MLX clean
-	$(RM) $(OBJS_DIR)
+	$(eval INFO = $(shell echo $(LRed)Cleaning$(Color_Off)))
+	$(info $(INFO))
+	@$(MAKE) -C $(LIBS_DIR)/GNL fclean
+	$(eval INFO = $(shell echo $(LCyan)libgnl "    "✅$(Color_Off)))
+	$(info $(INFO))
+	@$(MAKE) -C $(LIBS_DIR)/MLX fclean
+	$(eval INFO = $(shell echo $(LCyan)libmlx "    "✅$(Color_Off)))
+	$(info $(INFO))
+	@$(RM) $(OBJS_DIR)
+	$(eval INFO = $(shell echo $(LCyan)ObjDir "    "✅$(Color_Off)))
+	$(info $(INFO))
+	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
+	$(info $(INFO))
+	$(info )
 
 fclean : clean
-	$(MAKE) -C $(LIBS_DIR)/GNL fclean
-	$(MAKE) -C $(LIBS_DIR)/MLX fclean
-	$(RM) $(NAME)
+	$(eval INFO = $(shell echo $(LRed)Removing$(Color_Off)))
+	$(info $(INFO))
+	@$(RM) $(NAME)
+	$(eval INFO = $(shell echo $(LPurple)cub3D "     "✅$(Color_Off)))
+	$(info $(INFO))
+	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
+	$(info $(INFO))
+	$(info )
 
 re :
-	$(MAKE) fclean
-	$(MAKE) all
+	@$(MAKE) fclean
+	@$(MAKE) all
+
 
 .PHONY : all clean fclean re

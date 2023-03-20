@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 17:18:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/20 17:56:22 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,43 +19,6 @@
 #include "../incs/util.h"
 #include "../incs/init.h"
 #include "../incs/map_vaildity.h"
-
-void	print_map(t_data *data, size_t i)
-{
-	i = 0;
-	while (i < ft_strlen(data->map->map[1]) + 2)
-	{
-		write(1, "-", 1);
-		i++;
-	}
-	write(1, "\n", 1);
-	i = 0;
-	while (data->map->map[i])
-	{
-		printf("|%s|\n", data->map->map[i]);
-		i++;
-	}
-	i = 0;
-	while (i < ft_strlen(data->map->map[1]) + 2)
-	{
-		write(1, "-", 1);
-		i++;
-	}
-	write(1, "\n", 1);
-}
-
-void	test_input(t_data *data)
-{
-	printf("%s\n", data->input->no_png);
-	printf("%s\n", data->input->so_png);
-	printf("%s\n", data->input->ea_png);
-	printf("%s\n", data->input->we_png);
-	printf("%s\n", data->input->ceiling);
-	printf("%s\n", data->input->floor);
-	print_map(data, 0);
-	printf("map size\n");
-	printf("x : %d, y : %d\n", data->map->xsize, data->map->ysize);
-}
 
 void	init_data(t_data *data, char *input_file)
 {

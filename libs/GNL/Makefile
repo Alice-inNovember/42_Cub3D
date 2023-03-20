@@ -12,22 +12,22 @@ all : $(NAME)
 
 ifeq ($(filter bonus, $(MAKECMDGOALS)), bonus)
 $(NAME) : $(OBJS) $(BOBJS)
-	$(LIBC) $(NAME) $(OBJS) $(BOBJS)
+	@$(LIBC) $(NAME) $(OBJS) $(BOBJS)
 else
 $(NAME) : $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
+	@$(LIBC) $(NAME) $(OBJS)
 endif
 
 bonus : $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	$(RM) $(OBJS) $(BOBJS)
+	@$(RM) $(OBJS) $(BOBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re : fclean all
 
