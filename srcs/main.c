@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 19:06:06 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/03/25 19:07:21 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	init_data(&data, argv[1]);
+	// map_vaild
+	// input_data
 	test_input(&data);
 	init_event(&data);
 	mlx_loop(data.libx->mlx);

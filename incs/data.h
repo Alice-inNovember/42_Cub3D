@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 18:51:58 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:04:46 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct s_texture
 	t_image	*wall_s;
 	t_image	*wall_e;
 	t_image	*wall_w;
+	t_image *background;
 	t_rgb	floor;
 	t_rgb	ceiling;
 }	t_texture;
