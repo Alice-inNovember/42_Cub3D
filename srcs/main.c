@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 20:15:55 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:31:07 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int argc, char **argv)
 	init_data(&data, argv[1]);
 	if (map_vaildity(data.map, data.map_obj) == 1)
 		err_exit("map vaildity error");
+	input_data(&data);
 	test_input(&data);
 	init_event(&data);
 	mlx_loop(data.libx->mlx);
