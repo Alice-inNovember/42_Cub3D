@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 19:07:21 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:15:55 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	init_data(t_data *data, char *input_file)
 	init_player(data);
 	data->screen = ft_calloc(1, sizeof(t_image));
 	init_screen(data);
+	data->map_obj = ft_calloc(1, sizeof(t_map_obj));
+	init_map_obj(data);
 }
 
 int	main(int argc, char **argv)
@@ -43,8 +45,8 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	init_data(&data, argv[1]);
-	// map_vaild
-	// input_data
+	if (map_vaildity(data.map, data.map_obj) == 1)
+		err_exit("map vaildity error");
 	test_input(&data);
 	init_event(&data);
 	mlx_loop(data.libx->mlx);

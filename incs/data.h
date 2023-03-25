@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 19:04:46 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/25 19:52:14 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,13 @@ typedef struct s_player
 	double	plane_y;
 }	t_player;
 
+typedef struct s_map_obj
+{
+	int		player;
+	int		player_pos[2];
+	char	c;
+}	t_map_obj;
+
 typedef struct s_data
 {
 	t_libx		*libx;
@@ -104,13 +111,7 @@ typedef struct s_data
 	t_texture	*texture;
 	t_player	*player;
 	t_image		*screen;
+	t_map_obj	*map_obj;
 }	t_data;
-
-typedef struct s_map_obj
-{
-	int		player;
-	int		player_pos[2];
-	char	c;
-}	t_map_obj;
 
 #endif

@@ -31,6 +31,7 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(INITIAL_DIR)/init_texture.c \
 					$(INITIAL_DIR)/init_player.c \
 					$(INITIAL_DIR)/init_screen.c \
+					$(INITIAL_DIR)/init_map_obj.c \
 					$(MINIMAP_DIR)/find_minimap.c \
 					$(MINIMAP_DIR)/mini_insert.c \
 					$(MINIMAP_DIR)/mini_obj_insert.c \

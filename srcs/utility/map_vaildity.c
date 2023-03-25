@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 18:54:42 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:00:42 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 	int		y;
 	int		x;
 
-	map_obj_init(map_obj);
 	y = 0;
 	while (y < map_data->ysize - 1)
 	{
@@ -37,14 +36,6 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 		y++;
 	}
 	return (0);
-}
-
-void	map_obj_init(t_map_obj *map_obj)
-{
-	map_obj->player = 0;
-	map_obj->player_pos[0] = 0;
-	map_obj->player_pos[1] = 0;
-	map_obj->c = '0';
 }
 
 void	insert_map_obj(t_map_obj *map, char c, int x, int y)
