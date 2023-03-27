@@ -3,42 +3,50 @@
 void	input_data(t_data *data)
 {
 	input_player(data->map_obj, data->player);
+	input_img(data->input, data->texture, data->libx);
 }
 
-void	input_player(t_map_obj *map_obj, t_player *player)
+void	input_img(t_input *input, t_texture *tex, t_libx *mlx)
 {
-	player->pos_x = map_obj->player_pos[0];
-	player->pos_y = map_obj->player_pos[1];
+	tran_mlx_img(input, tex, mlx);
+	make_t_images(tex);
+	make_background(tex, mlx);
 }
 
-void	dir_plane_input(int x, t_player *player)
+void	make_background(t_texture *tex, t_libx *mlx)
 {
-	if (x == 0)
-	{
-		player->dir_x = -1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = 0.66;
-	}
-	else if (x == 1)
-	{
-		player->dir_x = 1;
-		player->dir_y = 0;
-		player->plane_x = 0;
-		player->plane_y = -0.66;
-	}
-	else if (x == 2)
-	{
-		player->dir_x = 0.0;
-		player->dir_y = -1.0;
-		player->plane_x = 0.66;
-		player->plane_y = 0.0;
-	}
-	else if (x == 3)
-	{
-		player->dir_x = 0.0;
-		player->dir_y = 1.0;
-		player->plane_x = -0.66;
-		player->plane_y = 0.0;
-	}
+	tex->background->img = mlx_new_image(mlx->mlx, G_W, G_H);
+	
+
+}
+
+void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
+{
+	int	wid;
+	int	hei;
+
+	tex->wall_e->img = \
+	mlx_xpm_file_to_image(mlx->mlx, input->ea_png, &wid, &hei);
+	tex->wall_n->img = \
+	mlx_xpm_file_to_image(mlx->mlx, input->no_png, &wid, &hei);
+	tex->wall_s->img = \
+	mlx_xpm_file_to_image(mlx->mlx, input->so_png, &wid, &hei);
+	tex->wall_w->img = \
+	mlx_xpm_file_to_image(mlx->mlx, input->we_png, &wid, &hei);
+}
+
+void	make_t_images(t_texture *tex)
+{
+	tex->wall_e->addr = \
+	mlx_get_data_addr(tex->wall_e->img, &tex->wall_e->bits_per_pixel, \
+					&tex->wall_e->line_length, &tex->wall_e->endian);
+	tex->wall_n->addr = \
+	mlx_get_data_addr(tex->wall_n->img, &tex->wall_n->bits_per_pixel, \
+					&tex->wall_n->line_length, &tex->wall_n->endian);
+	tex->wall_s->addr = \
+	mlx_get_data_addr(tex->wall_s->img, &tex->wall_s->bits_per_pixel, \
+					&tex->wall_s->line_length, &tex->wall_s->endian);
+	tex->wall_w->addr = \
+	mlx_get_data_addr(tex->wall_w->img, &tex->wall_w->bits_per_pixel, \
+					&tex->wall_w->line_length, &tex->wall_w->endian);
 }
