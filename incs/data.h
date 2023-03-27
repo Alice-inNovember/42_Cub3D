@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 20:31:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:04:17 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # define RED 0
 # define GREEN 1
 # define BLUE 2
+# define G_W 640
+# define G_H 480
+# define IMG_W 64
+# define IMG_H 64
+# define E 0
+# define W 1
+# define S 2
+# define N 3
 
 //X11 interface
 # define KEY_W		13
@@ -77,6 +85,7 @@ typedef struct s_image
 
 typedef struct s_texture
 {
+	t_image	img_box[6];
 	t_image	*wall_n;
 	t_image	*wall_s;
 	t_image	*wall_e;
@@ -113,5 +122,39 @@ typedef struct s_data
 	t_image		*screen;
 	t_map_obj	*map_obj;
 }	t_data;
+
+typedef struct s_detail_info
+{
+	double	ray_range;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	double	first_dist_x;
+	double	first_dist_y;
+	double	squ_per_dist_x;
+	double	squ_per_dist_y;
+	int		step_x;
+	int		step_y;
+	double	verti_wall_dist;
+	int		hit;
+	int		side;
+	int		four_dir;
+}	t_detail_info;
+
+typedef	struct	s_other_draw
+{
+	int		draw_start;
+	int		draw_end;
+	double	draw_pos;
+	int		get_img_x;
+	int		get_img_y;
+	int		draw_img_x;
+	int		draw_img_y;
+	double	step;
+	int		color;
+	int		away_dist;
+	double	wall_x;
+}	t_other_draw;
 
 #endif
