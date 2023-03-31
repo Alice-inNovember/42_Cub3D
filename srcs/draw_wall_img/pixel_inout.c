@@ -1,4 +1,4 @@
-#include "data.h"
+#include "../../incs/draw_game_img.h"
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 {

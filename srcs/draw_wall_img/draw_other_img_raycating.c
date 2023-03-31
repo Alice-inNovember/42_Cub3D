@@ -1,4 +1,4 @@
-#include "data.h"
+#include "../../incs/draw_game_img.h"
 
 void	select_img(t_player *player, t_detail_info *info)
 {

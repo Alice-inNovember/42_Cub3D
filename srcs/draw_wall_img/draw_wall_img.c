@@ -1,6 +1,6 @@
-#include "data.h"
+#include "../../incs/draw_game_img.h"
 
-void	draw_other(t_image game_img, t_data *data)
+void	draw_wall_img(t_image game_img, t_data *data)
 {
 	int				x;
 	t_detail_info	info;
@@ -10,7 +10,7 @@ void	draw_other(t_image game_img, t_data *data)
 	while (x < G_W)
 	{
 		init_info(&info);
-		init_draw_info(&draw_info);
+		init_draw_init(&draw_info);
 		input_need_for_raycating(data->player, &info, x);
 		input_ray_step(data->player, &info);
 		ray_casting(data->map, data);

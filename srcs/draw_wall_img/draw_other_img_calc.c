@@ -1,4 +1,4 @@
-#include "data.h"
+#include "../../incs/draw_game_img.h"
 
 void	calc_draw_img_others(t_other_draw *draw_info, \
 t_player *player, t_detail_info *info)
