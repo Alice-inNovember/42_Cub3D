@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/27 16:04:17 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/03/31 16:04:12 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DATA_H
 
 # include "../libs/MLX/mlx.h"
+# include "../incs/minimap.h"
 
 # define RED 0
 # define GREEN 1
@@ -85,12 +86,13 @@ typedef struct s_image
 
 typedef struct s_texture
 {
-	t_image	img_box[6];
+	t_image	img_box[4];
 	t_image	*wall_n;
 	t_image	*wall_s;
 	t_image	*wall_e;
 	t_image	*wall_w;
 	t_image *background;
+	t_image	*wall_img;
 	t_rgb	floor;
 	t_rgb	ceiling;
 }	t_texture;
@@ -121,6 +123,7 @@ typedef struct s_data
 	t_player	*player;
 	t_image		*screen;
 	t_map_obj	*map_obj;
+	t_mini		*mini;
 }	t_data;
 
 typedef struct s_detail_info

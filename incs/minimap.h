@@ -20,7 +20,7 @@ typedef struct s_mini
 }	t_mini;
 
 
-int		minimap(t_map *map_data);
+int		minimap(t_map *map_data, t_data *data);
 void	mini_init(t_mini *mini);
 int		mini_insert(t_map *map_data, t_mini *mini);
 void	mini_insert_xy(t_map *map_data, t_mini *mini);
