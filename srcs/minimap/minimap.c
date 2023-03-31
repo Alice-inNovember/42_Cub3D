@@ -1,6 +1,6 @@
 #include "../../incs/minimap.h"
 
-int	minimap(t_map *map_data)
+int	minimap(t_map *map_data, t_data *data)
 {
 	t_mini	mini;
 
@@ -14,6 +14,7 @@ int	minimap(t_map *map_data)
 	find_minimap(&mini);
 	if (new_image_minimap(&mini) == 1)
 		return (1);
+	data->mini = &mini;
 	return (0);
 }
 
