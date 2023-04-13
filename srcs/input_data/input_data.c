@@ -1,4 +1,4 @@
-#include "../incs/input_data.h"
+#include "../../incs/input_data.h"
 
 void	input_data(t_data *data)
 {

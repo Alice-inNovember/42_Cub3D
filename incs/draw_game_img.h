@@ -2,6 +2,7 @@
 # define DRAW_GAME_IMG_H
 
 #include "data.h"
+#include <math.h>
 
 // draw_game_img.c
 // void			*draw_game_img(t_image game_img, t_data *data);
@@ -23,7 +24,7 @@ void			input_need_for_raycating(t_player *player, t_detail_info *info, int x);
 void			input_ray_step(t_player *player, t_detail_info *info);
 
 // draw_other_img.c
-void			*draw_wall_img(t_image game_img, t_data *data);
+void			draw_wall_img(t_image game_img, t_data *data);
 
 //drawing_img.c
 // void			draw_ceiling(t_image game_img, t_rgb ceiling);

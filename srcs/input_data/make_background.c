@@ -1,4 +1,5 @@
-#include "../incs/input_data.h"
+#include "../../incs/input_data.h"
+#include "../../incs/draw_game_img.h"
 
 void	make_background(t_texture *tex, t_libx *mlx)
 {

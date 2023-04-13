@@ -104,6 +104,10 @@ $(MINIMAP_OBJ)/%.o : $(MINIMAP_DIR)/%.c | $(MINIMAP_OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 $(UTILITY_OBJ)/%.o : $(UTILITY_DIR)/%.c | $(UTILITY_OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
+$(INPUTDATA_OBJ)/%.o : $(INPUTDATA_DIR)/%.c | $(INPUTDATA_OBJ)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(DRAWWALLIMG_OBJ)/%.o : $(DRAWWALLIMG_DIR)/%.c | $(DRAWWALLIMG_OBJ)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJS_DIR):
 	$(eval INFO = $(shell echo $(LBlue)Create DIR$(Color_Off)))
@@ -122,6 +126,12 @@ $(OBJS_DIR):
 	$(info $(INFO))
 	@mkdir -p $(UTILITY_OBJ)
 	$(eval INFO = $(shell echo $(LCyan)utility "   "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(INPUTDATA_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)input_data "   "✅$(Color_Off)))
+	$(info $(INFO))
+	@mkdir -p $(DRAWWALLIMG_OBJ)
+	$(eval INFO = $(shell echo $(LCyan)draw_wall_img "   "✅$(Color_Off)))
 	$(info $(INFO))
 	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
 	$(info $(INFO))

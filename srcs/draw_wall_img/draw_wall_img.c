@@ -13,7 +13,7 @@ void	draw_wall_img(t_image game_img, t_data *data)
 		init_draw_init(&draw_info);
 		input_need_for_raycating(data->player, &info, x);
 		input_ray_step(data->player, &info);
-		ray_casting(data->map, data);
+		ray_casting(data->map, &info);
 		select_img(data->player, &info);
 		calc_dist_valti(&info);
 		draw_pixel_st_en(&draw_info, &info);
