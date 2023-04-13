@@ -1,4 +1,4 @@
-#include "../incs/data.h"
+#include "../incs/input_data.h"
 
 void	input_player(t_map_obj *map_obj, t_player *player)
 {

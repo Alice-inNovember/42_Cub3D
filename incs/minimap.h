@@ -6,20 +6,6 @@
 #include "data.h"
 #include "../libs/MLX/mlx.h"
 
-typedef struct s_mini_obj
-{
-	char		**map;
-	t_image	img;
-}	t_mini_obj;
-
-typedef struct s_mini
-{
-	t_mini_obj	**mini_obj;
-	int			parti_x;
-	int			parti_y;
-}	t_mini;
-
-
 int		minimap(t_map *map_data, t_data *data);
 void	mini_init(t_mini *mini);
 int		mini_insert(t_map *map_data, t_mini *mini);

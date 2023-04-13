@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/31 16:04:12 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:19:10 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define DATA_H
 
 # include "../libs/MLX/mlx.h"
-# include "../incs/minimap.h"
 
 # define RED 0
 # define GREEN 1
@@ -83,6 +82,19 @@ typedef struct s_image
 	int		line_length;
 	int		endian;
 }	t_image;
+
+typedef struct s_mini_obj
+{
+	char		**map;
+	t_image	img;
+}	t_mini_obj;
+
+typedef struct s_mini
+{
+	t_mini_obj	**mini_obj;
+	int			parti_x;
+	int			parti_y;
+}	t_mini;
 
 typedef struct s_texture
 {

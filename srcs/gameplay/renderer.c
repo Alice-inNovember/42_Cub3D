@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/31 16:12:14 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:20:10 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 // MLX_SYNC_IMAGE_WRITABLE
 // MLX_SYNC_WIN_FLUSH_CMD
 // MLX_SYNC_WIN_CMD_COMPLETED
+
+void	make_wall_img(t_image *wall_img, t_libx *mlx);
 
 void	render_screen(t_data *data)
 {

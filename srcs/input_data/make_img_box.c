@@ -1,4 +1,4 @@
-#include "../incs/data.h"
+#include "../incs/input_data.h"
 
 void	make_img_box(t_texture *tex)
 {

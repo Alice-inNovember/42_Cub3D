@@ -14,11 +14,15 @@ GM_PLAY_DIR		=	$(SRCS_DIR)/gameplay
 INITIAL_DIR		=	$(SRCS_DIR)/initial
 MINIMAP_DIR		=	$(SRCS_DIR)/minimap
 UTILITY_DIR		=	$(SRCS_DIR)/utility
+INPUTDATA_DIR	=	$(SRCS_DIR)/input_data
+DRAWWALLIMG_DIR	=	$(SRCS_DIR)/draw_wall_img
 OBJS_DIR		=	objs
 GM_PLAY_OBJ		=	$(OBJS_DIR)/gameplay
 INITIAL_OBJ		=	$(OBJS_DIR)/initial
 MINIMAP_OBJ		=	$(OBJS_DIR)/minimap
 UTILITY_OBJ		=	$(OBJS_DIR)/utility
+INPUTDATA_OBJ	=	$(OBJS_DIR)/input_data
+DRAWWALLIMG_OBJ	=	$(OBJS_DIR)/draw_wall_img
 LIBS_DIR		=	libs
 #FILES
 MAIN_SRCS		=	$(SRCS_DIR)/main.c \
@@ -40,7 +44,19 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(UTILITY_DIR)/map_vaildity.c \
 					$(UTILITY_DIR)/util1.c \
 					$(UTILITY_DIR)/util2.c \
-					$(UTILITY_DIR)/test.c
+					$(UTILITY_DIR)/test.c \
+					$(INPUTDATA_DIR)/input_data.c \
+					$(INPUTDATA_DIR)/input_img.c \
+					$(INPUTDATA_DIR)/input_player.c \
+					$(INPUTDATA_DIR)/input_wall_img.c \
+					$(INPUTDATA_DIR)/make_background.c \
+					$(INPUTDATA_DIR)/make_img_box.c \
+					$(DRAWWALLIMG_DIR)/draw_img_init.c \
+					$(DRAWWALLIMG_DIR)/draw_other_img_calc.c \
+					$(DRAWWALLIMG_DIR)/draw_other_img_raycating.c \
+					$(DRAWWALLIMG_DIR)/draw_wall_img.c \
+					$(DRAWWALLIMG_DIR)/drawing_img.c \
+					$(DRAWWALLIMG_DIR)/pixel_inout.c
 MAIN_OBJ		=	$(MAIN_SRCS:.c=.o)
 OBJS			=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(MAIN_OBJ))
 LIBGNL			=	$(LIBS_DIR)/GNL/LIBGNL.a

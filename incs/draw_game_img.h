@@ -4,7 +4,7 @@
 #include "data.h"
 
 // draw_game_img.c
-void			*draw_game_img(t_image game_img, t_data *data);
+// void			*draw_game_img(t_image game_img, t_data *data);
 
 // draw_img_init.c
 void			init_info(t_detail_info *info);
@@ -26,8 +26,8 @@ void			input_ray_step(t_player *player, t_detail_info *info);
 void			*draw_wall_img(t_image game_img, t_data *data);
 
 //drawing_img.c
-void			draw_ceiling(t_image game_img, t_rgb ceiling);
-void			draw_floor(t_image game_img, t_rgb floor);
+// void			draw_ceiling(t_image game_img, t_rgb ceiling);
+// void			draw_floor(t_image game_img, t_rgb floor);
 void			drawing_game_img(t_other_draw *draw_info, \
 		t_image game_img, t_image img, int x);
 

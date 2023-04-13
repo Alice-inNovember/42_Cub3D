@@ -1,4 +1,4 @@
-#include "../incs/data.h"
+#include "../incs/input_data.h"
 
 void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
 {

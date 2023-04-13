@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/31 16:15:07 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:21:31 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "../incs/init.h"
 #include "../incs/map_vaildity.h"
 #include "../incs/minimap.h"
+#include "../incs/input_data.h"
 
 void	init_data(t_data *data, char *input_file)
 {
@@ -51,6 +52,6 @@ int	main(int argc, char **argv)
 	input_data(&data);
 	minimap(data.map, &data);
 	test_input(&data);
-	init_event(&data);
-	mlx_loop(data.libx->mlx);
+	// init_event(&data);
+	// mlx_loop(data.libx->mlx);
 }

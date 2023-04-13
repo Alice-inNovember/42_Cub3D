@@ -1,4 +1,4 @@
-#include "../incs/data.h"
+#include "../incs/input_data.h"
 
 void	make_background(t_texture *tex, t_libx *mlx)
 {
