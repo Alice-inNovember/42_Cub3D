@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/27 19:41:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:08:42 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // MLX_SYNC_WIN_FLUSH_CMD
 // MLX_SYNC_WIN_CMD_COMPLETED
 
-void	make_wall_img(t_image *wall_img, t_libx *mlx);
+static void	make_wall_img(t_image *wall_img, t_libx *mlx);
 
 void	render_screen(t_data *data)
 {
@@ -31,7 +31,7 @@ void	render_screen(t_data *data)
 int	renderer(t_data *data)
 {
 	make_wall_img(data->texture->wall_img, data->libx);
-	draw_wall_img(*data->texture->wall_img, data);
+	draw_wall_img(data->texture->wall_img, data);
 	mlx_sync(MLX_SYNC_IMAGE_WRITABLE, NULL);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
 	data->texture->background, 0, 0);
@@ -45,7 +45,7 @@ int	renderer(t_data *data)
 	return (0);
 }
 
-void	make_wall_img(t_image *wall_img, t_libx *mlx)
+static void	make_wall_img(t_image *wall_img, t_libx *mlx)
 {
 	wall_img->img = mlx_new_image(mlx->mlx, G_W, G_H);
 	wall_img->addr = \

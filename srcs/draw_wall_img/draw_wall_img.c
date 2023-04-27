@@ -1,6 +1,6 @@
 #include "../../incs/draw_game_img.h"
 
-void	draw_wall_img(t_image game_img, t_data *data)
+void	draw_wall_img(t_image *game_img, t_data *data)
 {
 	int				x;
 	t_detail_info	info;

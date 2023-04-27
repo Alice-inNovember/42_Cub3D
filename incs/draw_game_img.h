@@ -24,13 +24,12 @@ void			input_need_for_raycating(t_player *player, t_detail_info *info, int x);
 void			input_ray_step(t_player *player, t_detail_info *info);
 
 // draw_other_img.c
-void			draw_wall_img(t_image game_img, t_data *data);
+void			draw_wall_img(t_image *game_img, t_data *data);
 
 //drawing_img.c
 // void			draw_ceiling(t_image game_img, t_rgb ceiling);
 // void			draw_floor(t_image game_img, t_rgb floor);
-void			drawing_game_img(t_other_draw *draw_info, \
-		t_image game_img, t_image img, int x);
+void			drawing_game_img(t_other_draw *draw_info, t_image *game_img, t_image img, int x);
 
 // pixel_inout.c
 void			my_mlx_pixel_put(t_image *data, int x, int y, int color);
