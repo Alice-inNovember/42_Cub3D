@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/13 21:19:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:01:59 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define DATA_H
 
 # include "../libs/MLX/mlx.h"
+# include <stdio.h>
+# include <stdlib.h>
 
 # define RED 0
 # define GREEN 1

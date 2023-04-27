@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/13 21:20:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:41:10 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	renderer(t_data *data)
 	[(int)(data->player->pos_x / 10)].img.img, \
 	0, 0);
 	mlx_sync(MLX_SYNC_WIN_FLUSH_CMD, NULL);
-	(void)data;
 	return (0);
 }
 

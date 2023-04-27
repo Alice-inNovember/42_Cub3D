@@ -1,8 +1,15 @@
 #include "../../incs/input_data.h"
 #include "../../incs/draw_game_img.h"
 
+static	void	temporary_function(t_texture *tex)
+{
+	tex->ceiling = 0x00003333;
+	tex->floor = 0x00FFFFCC;
+}
+
 void	make_background(t_texture *tex, t_libx *mlx)
 {
+	temporary_function(tex);
 	tex->background->img = mlx_new_image(mlx->mlx, G_W, G_H);
 	tex->background->addr = \
 	mlx_get_data_addr(tex->background->img, &tex->background->bits_per_pixel, \
