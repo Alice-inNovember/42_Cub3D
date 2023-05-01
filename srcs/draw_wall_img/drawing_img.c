@@ -12,7 +12,6 @@ void	drawing_game_img(t_other_draw *draw_info, t_image *game_img, t_image img, i
 		draw_info->draw_pos += draw_info->step;
 		draw_info->color = \
 		get_color(&img, draw_info->get_img_x, draw_info->get_img_y);
-		printf("12312 %d\n", draw_info->color);
 		my_mlx_pixel_put(game_img, x, y, draw_info->color);
 	}
 }

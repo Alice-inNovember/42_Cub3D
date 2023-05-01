@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:33:40 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/01 17:00:11 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/01 17:17:17 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	init_event(t_data *data)
 	data->texture->background->img, 0, 0);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win,\
 	data->texture->wall_img->img, 0, 0);
+	mlx_loop(data->libx->mlx);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
 	(data->mini->mini_obj[(int)(data->player->pos_y / 10)]\
 	[(int)(data->player->pos_x / 10)]).img.img, \

@@ -18,6 +18,7 @@ void	input_dir_plane(int x, t_player *player)
 	{
 		player->dir_x = -1.0;
 		player->plane_y = 0.66;
+		player->pos_y += 0.5;
 	}
 	else if (x == 'S')
 	{
