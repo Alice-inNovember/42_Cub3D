@@ -34,7 +34,7 @@ void	ray_casting(t_map *map, t_detail_info *info)
 			info->map_y += info->step_y;
 			info->side = 1;
 		}
-		if (map->map[info->map_x][info->map_y] == '1')
+		if (map->map[info->map_x][info->map_y] == '1' || map->map[info->map_x][info->map_y] == ' ')
 			info->hit = 1;
 	}
 }
@@ -43,11 +43,13 @@ void	input_need_for_raycating(t_player *player, t_detail_info *info, int x)
 {
 	info->ray_range = ((2 * x) / (double)G_W) - 1;
 	info->ray_dir_x = player->dir_x + (player->plane_x * info->ray_range);
-	info->ray_dir_y = player->dir_y + (player->plane_x * info->ray_range);
+	info->ray_dir_y = player->dir_y + (player->plane_y * info->ray_range);
+	printf("abc %f %f\n", info->ray_dir_x, info->ray_dir_y);
 	info->map_x = (int)player->pos_x;
 	info->map_y = (int)player->pos_y;
 	info->squ_per_dist_x = fabs(1 / info->ray_dir_x);
 	info->squ_per_dist_y = fabs(1 / info->ray_dir_y);
+	printf("%f %f\n", info->squ_per_dist_x, info->squ_per_dist_y);
 }
 
 void	input_ray_step(t_player *player, t_detail_info *info)

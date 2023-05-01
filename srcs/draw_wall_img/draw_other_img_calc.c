@@ -25,6 +25,7 @@ t_player *player, t_detail_info *info)
 
 void	calc_dist_valti(t_detail_info *info)
 {
+	printf("%f %f\n", info->first_dist_x, info->squ_per_dist_x);
 	if (info->side == 0)
 		info->verti_wall_dist = (info->first_dist_x - info->squ_per_dist_x);
 	else
