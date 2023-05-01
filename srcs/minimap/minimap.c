@@ -89,7 +89,7 @@ void	mini_draw_wall(t_image *img, int y, int x)
 			if (j == x * 15 || j == (x + 1) * 15 - 1 || i == y * 15 || i == (y + 1) * 15 - 1)
 				my_mlx_pixel_put(img, j, i, 0x00000000);
 			else
-				my_mlx_pixel_put(img, j, i, 0x00808080);
+				my_mlx_pixel_put(img, j, i, 0x00C7FF96);
 			j++;
 		}
 		i++;
@@ -110,7 +110,7 @@ void	mini_draw_floor(t_image *img, int y, int x)
 			if (j == x * 15 || j == (x + 1) * 15 - 1 || i == y * 15 || i == (y + 1) * 15 - 1)
 				my_mlx_pixel_put(img, j, i, 0x00000000);
 			else
-				my_mlx_pixel_put(img, j, i, 0x0099FF66);
+				my_mlx_pixel_put(img, j, i, 0x00808080);
 			j++;
 		}
 		i++;
