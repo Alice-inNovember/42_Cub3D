@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 16:03:14 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:41:33 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	player_rotate(t_data *data, int speed)
 	double	old_plane_x;
 	double	angle;
 
-	angle = 0.1 * speed;
+	angle = 0.015 * speed;
 	old_dir_x = data->player->dir_x;
 	old_plane_x = data->player->plane_x;
 	data->player->dir_x = data->player->dir_x * cos(angle) - \
@@ -96,6 +96,14 @@ int	key_hook(int keycode, t_data *data)
 {
 	if (keycode == KEY_ESC)
 		exit(EXIT_SUCCESS);
+	else if (keycode == 18)
+	{
+		data->mouse.tran_mouse *= -1;
+		if (data->mouse.tran_mouse == 1)
+			mlx_mouse_hide();
+		else
+			mlx_mouse_show();
+	}
 	else if (keycode == KEY_UP || keycode == 13)
 	{
 		write(1, "UP\n", 3);
@@ -119,12 +127,12 @@ int	key_hook(int keycode, t_data *data)
 	if (keycode == KEY_LEFT)
 	{
 		write(1, "<-\n", 4);
-		player_rotate(data, 1);
+		player_rotate(data, 10);
 	}
 	if (keycode == KEY_RIGHT)
 	{
 		write(1, "->\n", 4);
-		player_rotate(data, -1);
+		player_rotate(data, -10);
 	}
 	return (0);
 }

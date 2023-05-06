@@ -71,7 +71,7 @@ void	mini_obj_map_insert(t_mini_obj **mini_obj, t_map *map_data, t_mini *mini)
 	while (i < map_data->ysize)
 	{
 		j = 0;
-		while (j < map_data->xsize - 1 && map_data->map[i][j] != 0)
+		while (j < map_data->xsize && map_data->map[i][j] != 0)
 		{
 			if (map_data->map[i][j] == ' ')
 				mini_obj[i / 10][j / 10].map[i % 10][j % 10] = 2;

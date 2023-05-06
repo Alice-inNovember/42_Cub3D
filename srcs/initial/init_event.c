@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:33:40 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 15:08:37 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:41:05 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ static void	make_wall_img(t_image *wall_img, t_libx *mlx)
 	&wall_img->line_length, &wall_img->endian);
 }
 
+static void	mouse_init(t_mouse *mouse)
+{
+	mouse->mouse_x = 0;
+	mouse->mouse_y = 0;
+	mouse->tran_mouse = -1;
+}
+
 static int	mouse_handle(int x, int y, void *parme)
 {
 	t_data *data;
@@ -35,16 +42,21 @@ static int	mouse_handle(int x, int y, void *parme)
 	data = parme;
 	data->mouse.mouse_x = x;
 	data->mouse.mouse_y = y;
-	if (x < 90)
-		player_rotate(data, 1);
-	else if (x > 500)
-		player_rotate(data, -1);
+	if (data->mouse.tran_mouse == 1)
+	{
+		if (x < G_W / 2)
+			player_rotate(data, 1);
+		else if (x > G_H / 2)
+			player_rotate(data, -1);
+		mlx_mouse_move(data->libx->mlx_win, G_W / 2, G_H / 2);
+	}
 	return (0);
 }
 
 void	init_event(t_data *data)
 {
 	make_wall_img(data->texture->wall_img, data->libx);
+	mouse_init(&data->mouse);
 	mlx_hook(data->libx->mlx_win, ON_DESTROY, 0, &red_button_hook, data); //종료
 	mlx_key_hook(data->libx->mlx_win, &key_hook, data);   //캐릭터 이동.
 	mlx_hook(data->libx->mlx_win, 6, 0, &mouse_handle, data);

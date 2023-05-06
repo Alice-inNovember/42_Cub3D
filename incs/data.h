@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 15:02:50 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:21:24 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_mouse
 {
 	int mouse_x;
 	int mouse_y;
+	int tran_mouse;
 }	t_mouse;
 
 typedef struct s_input

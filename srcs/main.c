@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 14:57:25 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:37:26 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	init_data(&data, argv[1]);
-	data.mouse.mouse_x = 0;
-	data.mouse.mouse_y = 0;
 	if (map_vaildity(data.map, data.map_obj) == 1)
 		err_exit("map vaildity error");
 	input_data(&data);
@@ -57,7 +55,6 @@ int	main(int argc, char **argv)
 	// test_input(&data);
 	mlx_do_key_autorepeaton(data.libx->mlx);
 	mlx_mouse_move(data.libx->mlx_win, G_W / 2, G_H / 2);
-	printf("%d\n", 123);
 	init_event(&data);
 	mlx_loop(data.libx->mlx);
 }

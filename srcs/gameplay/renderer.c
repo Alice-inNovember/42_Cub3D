@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 16:22:08 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 17:19:37 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 int	renderer(t_data *data)
 {
-	printf("%f %f\n", data->player->pos_y, data->player->pos_x);
 	draw_wall_img(data->texture->wall_img, data);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win,\
 	data->texture->wall_img->img, 0, 0);
