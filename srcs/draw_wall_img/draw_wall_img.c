@@ -24,3 +24,4 @@ void	draw_wall_img(t_image *game_img, t_data *data)
 		x++;
 	}
 }
+

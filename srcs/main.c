@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 12:10:51 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 14:57:25 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	// test_input(&data);
 	mlx_do_key_autorepeaton(data.libx->mlx);
 	mlx_mouse_move(data.libx->mlx_win, G_W / 2, G_H / 2);
+	printf("%d\n", 123);
 	init_event(&data);
 	mlx_loop(data.libx->mlx);
 }

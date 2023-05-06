@@ -11,7 +11,7 @@ t_player *player, t_detail_info *info)
 	else
 	{
 		draw_info->wall_x = \
-		player->dir_x + (info->verti_wall_dist * info->ray_dir_x);
+		player->pos_x + (info->verti_wall_dist * info->ray_dir_x);
 	}
 	draw_info->wall_x -= floor(draw_info->wall_x);
 	draw_info->get_img_x = (int)(draw_info->wall_x * (double)IMG_W);

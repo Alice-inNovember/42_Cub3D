@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 12:38:27 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 16:03:14 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	left_right(t_data *data, int x, int y)
 	double		delta_x;
 	double		delta_y;
 
-	speed = 1;
+	speed = 0.2;
 	delta_x = data->player->pos_x + x * data->player->plane_x * speed;
 	delta_y = data->player->pos_y + y * data->player->plane_y * speed;
 	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
@@ -36,13 +36,22 @@ static void	up_down(t_data *data, int x, int y)
 	double		delta_x;
 	double		delta_y;
 
-	speed = 1;
+	speed = 0.2;
 	delta_x = data->player->pos_x + x * data->player->dir_x * speed;
 	delta_y = data->player->pos_y + y * data->player->dir_y * speed;
 	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
-		data->player->pos_x = delta_x;
+	{
+		if(data->map->map[(int)(delta_x + 0.1)][(int)(data->player->pos_y)] != '1' \
+		&& data->map->map[(int)(delta_x - 0.1)][(int)(data->player->pos_y)] != '1')
+			data->player->pos_x = delta_x;
+	}
+		
 	if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y)] == '0')
-		data->player->pos_y = delta_y;
+	{
+		if(data->map->map[(int)(data->player->pos_x)][(int)(delta_y + 0.1)] != '1' \
+		&& data->map->map[(int)(data->player->pos_x)][(int)(delta_y - 0.1)] != '1')
+			data->player->pos_y = delta_y;	
+	}
 }
 
 void	player_move(t_data *data, int flag)

@@ -35,4 +35,5 @@ void	input_dir_plane(int x, t_player *player)
 		player->plane_x = -0.66;
 	}
 	player->pos_y += 0.5;
+	player->pos_x += 0.5;
 }

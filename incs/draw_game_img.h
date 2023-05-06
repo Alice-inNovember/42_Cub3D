@@ -17,8 +17,8 @@ void			init_info(t_detail_info *info);
 void			init_draw_init(t_other_draw *draw_info);
 
 // draw_other_img_calc.c
-void			calc_draw_img_others(t_other_draw *draw_info, \
-				t_player *player, t_detail_info *info);
+void			calc_draw_img_others(t_other_draw *draw_info, t_player *player, t_detail_info *info);
+void			calc_draw_img_one(t_other_draw *draw_info, t_player *player, t_detail_info *info);
 void			calc_dist_valti(t_detail_info *info);
 void			draw_pixel_st_en(t_other_draw *draw_info, t_detail_info *info);
 

@@ -3,6 +3,9 @@
 		"data.h": "c",
 		"mlx.h": "c",
 		"stdio.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"map_vaildity.h": "c",
+		"input_data.h": "c",
+		"draw_game_img.h": "c"
 	}
 }

@@ -15,8 +15,31 @@ int	minimap(t_map *map_data, t_data *data)
 	// find_minimap(&mini);
 	if (new_image_minimap(mini, data->libx) == 1)
 		return (1);
+	make_mini_player(mini, data->libx);
 	data->mini = mini;
 	return (0);
+}
+
+void	make_mini_player(t_mini *mini, t_libx *mlx)
+{
+	int x;
+	int	y;
+
+	y = 0;
+	mini->player = malloc(sizeof(t_image) * 1);
+	mini->player->img = mlx_new_image(mlx->mlx, 4, 4);
+	mini->player->addr = mlx_get_data_addr(mini->player->img, \
+	&mini->player->bits_per_pixel, &mini->player->line_length, &mini->player->endian);
+	while (y < 4)
+	{
+		x = 0;
+		while (x < 4)
+		{
+			my_mlx_pixel_put(mini->player, x, y, 0x000000FF);
+			x++;
+		}
+		y++;
+	}
 }
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
@@ -88,7 +111,7 @@ void	mini_draw_wall(t_image *img, int y, int x)
 		while (j >= x * 15 && j < (x + 1) * 15)
 		{
 			if (j == x * 15 || j == (x + 1) * 15 - 1 || i == y * 15 || i == (y + 1) * 15 - 1)
-				my_mlx_pixel_put(img, j, i, 0x00000000);
+				my_mlx_pixel_put(img, j, i, 0x55555555);
 			else
 				my_mlx_pixel_put(img, j, i, 0x00C7FF96);
 			j++;
@@ -109,7 +132,7 @@ void	mini_draw_floor(t_image *img, int y, int x)
 		while (j >= x * 15 && j < (x + 1) * 15)
 		{
 			if (j == x * 15 || j == (x + 1) * 15 - 1 || i == y * 15 || i == (y + 1) * 15 - 1)
-				my_mlx_pixel_put(img, j, i, 0x00000000);
+				my_mlx_pixel_put(img, j, i, 0x55555555);
 			else
 				my_mlx_pixel_put(img, j, i, 0x00808080);
 			j++;

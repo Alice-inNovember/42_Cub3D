@@ -26,5 +26,6 @@ void	init_fp(void (*fp[2])(t_image *, int, int));
 void	mini_draw_wall(t_image *img, int y, int x);
 void	mini_draw_floor(t_image *img, int y, int x);
 void	mini_draw_out(t_image *img, int y, int x);
+void	make_mini_player(t_mini *mini, t_libx *mlx);
 
 #endif

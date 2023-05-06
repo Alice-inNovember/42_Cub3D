@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 13:18:41 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 15:02:50 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ typedef struct s_mini_obj
 typedef struct s_mini
 {
 	t_mini_obj	**mini_obj;
+	t_image		*player;
 	int			parti_x;
 	int			parti_y;
 }	t_mini;
