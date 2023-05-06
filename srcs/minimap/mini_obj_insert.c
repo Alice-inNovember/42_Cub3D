@@ -73,7 +73,12 @@ void	mini_obj_map_insert(t_mini_obj **mini_obj, t_map *map_data, t_mini *mini)
 		j = 0;
 		while (j < map_data->xsize - 1 && map_data->map[i][j] != 0)
 		{
-			mini_obj[i / 10][j / 10].map[i % 10][j % 10] = map_data->map[i][j];
+			if (map_data->map[i][j] == ' ')
+				mini_obj[i / 10][j / 10].map[i % 10][j % 10] = 2;
+			else if (map_data->map[i][j] == '1')
+				mini_obj[i / 10][j / 10].map[i % 10][j % 10] = 1;
+			else
+				mini_obj[i / 10][j / 10].map[i % 10][j % 10] = 0;
 			j++;
 		}
 		i++;

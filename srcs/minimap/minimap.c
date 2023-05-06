@@ -2,19 +2,20 @@
 
 int	minimap(t_map *map_data, t_data *data)
 {
-	t_mini	mini;
+	t_mini	*mini;
 
-	if (mini_insert(map_data, &mini) == 1)
+	mini = malloc(sizeof(mini) * 1);
+	if (mini_insert(map_data, mini) == 1)
 		return (1);
-	if (mini_obj_insert(&mini, map_data) == 1)
+	if (mini_obj_insert(mini, map_data) == 1)
 	{
-		mini_obj_free(&mini, mini.parti_y);
+		mini_obj_free(mini, mini->parti_y);
 		return (1);
 	}
 	// find_minimap(&mini);
-	if (new_image_minimap(&mini, data->libx) == 1)
+	if (new_image_minimap(mini, data->libx) == 1)
 		return (1);
-	data->mini = &mini;
+	data->mini = mini;
 	return (0);
 }
 
