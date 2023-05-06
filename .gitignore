@@ -6,3 +6,5 @@ srcs/test.c
 cub3D
 *.swiftsourceinfo
 .DS_Store
+*.swiftmodule
+*.swiftdoc
