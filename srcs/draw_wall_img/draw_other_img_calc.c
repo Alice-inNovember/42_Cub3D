@@ -19,8 +19,8 @@ t_player *player, t_detail_info *info)
 	(info->side == 1 && info->ray_dir_y < 0))
 		draw_info->get_img_x = IMG_W - draw_info->get_img_x - 1;
 	draw_info->step = 1.0 * IMG_H / draw_info->away_dist;
-	draw_info->draw_pos = (draw_info->draw_start - \
-	(G_H / 2) + (draw_info->away_dist / 2) * draw_info->step);
+	draw_info->draw_pos = ((draw_info->draw_start - \
+	(G_H / 2) + (draw_info->away_dist / 2)) * draw_info->step);
 }
 
 void	calc_dist_valti(t_detail_info *info)

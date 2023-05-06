@@ -14,22 +14,23 @@ void	input_pos(t_map_obj *map_obj, t_player *player)
 
 void	input_dir_plane(int x, t_player *player)
 {
-	if (x == 'E')
+	if (x == 'N')
 	{
 		player->dir_x = -1.0;
 		player->plane_y = 0.66;
+		player->pos_y += 0.5;
 	}
-	else if (x == 'W')
+	else if (x == 'S')
 	{
 		player->dir_x = 1.0;
 		player->plane_y = -0.66;
 	}
-	else if (x == 'S')
+	else if (x == 'W')
 	{
 		player->dir_y = -1.0;
 		player->plane_x = 0.66;
 	}
-	else if (x == 'N')
+	else if (x == 'E')
 	{
 		player->dir_y = 1.0;
 		player->plane_x = -0.66;

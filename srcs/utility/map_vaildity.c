@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/23 18:44:55 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/01 17:14:25 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,15 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 void	insert_map_obj(t_map_obj *map, char c, int x, int y)
 {
 	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
+	{
 		map->player++;
-	map->c = c;
-	if (map->player > 1)
-		err_exit("a lot of players..\n");
-	map->player_pos[0] = x;
-	map->player_pos[1] = y;
+		map->c = c;
+		printf("%c\n", c);
+		if (map->player > 1)
+			err_exit("a lot of players..\n");
+		map->player_pos[0] = y;
+		map->player_pos[1] = x;
+	}
 }
 
 int	check_outline_point(t_map *map_data, int y, int x)

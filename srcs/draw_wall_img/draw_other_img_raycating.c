@@ -7,14 +7,14 @@ void	select_img(t_player *player, t_detail_info *info)
 		if (info->map_y > player->pos_y)
 			info->four_dir = 0;
 		else
-			info->four_dir = 1;
+			info->four_dir = 2;
 	}
 	else
 	{
 		if (info->map_x > player->pos_x)
-			info->four_dir = 2;
-		else
 			info->four_dir = 3;
+		else
+			info->four_dir = 1;
 	}
 }
 
@@ -43,7 +43,7 @@ void	input_need_for_raycating(t_player *player, t_detail_info *info, int x)
 {
 	info->ray_range = ((2 * x) / (double)G_W) - 1;
 	info->ray_dir_x = player->dir_x + (player->plane_x * info->ray_range);
-	info->ray_dir_y = player->dir_y + (player->plane_x * info->ray_range);
+	info->ray_dir_y = player->dir_y + (player->plane_y * info->ray_range);
 	info->map_x = (int)player->pos_x;
 	info->map_y = (int)player->pos_y;
 	info->squ_per_dist_x = fabs(1 / info->ray_dir_x);

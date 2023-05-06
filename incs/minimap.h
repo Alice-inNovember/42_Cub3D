@@ -20,7 +20,7 @@ void	find_minimap(t_mini *mini);
 void	print_minimap(t_mini_obj mini_obj);
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color);
-int		new_image_minimap(t_mini *mini);
+int		new_image_minimap(t_mini *mini, t_libx *mlx);
 int		new_img(char **map, t_image *img, void *mlx);
 void	init_fp(void (*fp[2])(t_image *, int, int));
 void	mini_draw_wall(t_image *img, int y, int x);

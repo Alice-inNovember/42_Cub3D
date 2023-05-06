@@ -14,6 +14,8 @@
 # define DATA_H
 
 # include "../libs/MLX/mlx.h"
+# include <stdio.h>
+# include <stdlib.h>
 
 # define RED 0
 # define GREEN 1
