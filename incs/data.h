@@ -58,6 +58,12 @@ typedef struct s_map
 	char	**map;
 }	t_map;
 
+typedef struct s_mouse
+{
+	int mouse_x;
+	int mouse_y;
+}	t_mouse;
+
 typedef struct s_input
 {
 	char	*no_png;
@@ -138,6 +144,7 @@ typedef struct s_data
 	t_image		*screen;
 	t_map_obj	*map_obj;
 	t_mini		*mini;
+	t_mouse		mouse;
 }	t_data;
 
 typedef struct s_detail_info
