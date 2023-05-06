@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/27 19:01:59 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/05 05:22:37 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,12 @@ typedef struct s_map
 	int		ysize;
 	char	**map;
 }	t_map;
+
+typedef struct s_mouse
+{
+	int mouse_x;
+	int mouse_y;
+}	t_mouse;
 
 typedef struct s_input
 {
@@ -138,6 +144,7 @@ typedef struct s_data
 	t_image		*screen;
 	t_map_obj	*map_obj;
 	t_mini		*mini;
+	t_mouse		mouse;
 }	t_data;
 
 typedef struct s_detail_info
