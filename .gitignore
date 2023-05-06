@@ -5,3 +5,4 @@ srcs/test.c
 *.a
 cub3D
 *.swiftsourceinfo
+.DS_Store

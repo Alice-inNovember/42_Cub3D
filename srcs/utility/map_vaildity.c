@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_vaildity.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/25 20:00:42 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/23 18:44:55 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	insert_map_obj(t_map_obj *map, char c, int x, int y)
 		err_exit("a lot of players..\n");
 	map->player_pos[0] = x;
 	map->player_pos[1] = y;
-	
 }
 
 int	check_outline_point(t_map *map_data, int y, int x)

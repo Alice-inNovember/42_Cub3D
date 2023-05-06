@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/04/13 21:19:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:19:10 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ typedef struct s_image
 
 typedef struct s_mini_obj
 {
-	char		**map;
+	char	**map;
 	t_image	img;
 }	t_mini_obj;
 
@@ -103,7 +103,7 @@ typedef struct s_texture
 	t_image	*wall_s;
 	t_image	*wall_e;
 	t_image	*wall_w;
-	t_image *background;
+	t_image	*background;
 	t_image	*wall_img;
 	t_rgb	floor;
 	t_rgb	ceiling;
@@ -157,7 +157,7 @@ typedef struct s_detail_info
 	int		four_dir;
 }	t_detail_info;
 
-typedef	struct	s_other_draw
+typedef struct s_other_draw
 {
 	int		draw_start;
 	int		draw_end;
