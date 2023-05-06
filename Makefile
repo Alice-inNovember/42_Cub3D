@@ -49,9 +49,9 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(INPUTDATA_DIR)/input_img.c \
 					$(INPUTDATA_DIR)/input_player.c \
 					$(INPUTDATA_DIR)/input_wall_img.c \
-					$(INPUTDATA_DIR)/make_background.c \
 					$(INPUTDATA_DIR)/make_img_box.c \
 					$(DRAWWALLIMG_DIR)/draw_img_init.c \
+					$(DRAWWALLIMG_DIR)/draw_background.c \
 					$(DRAWWALLIMG_DIR)/draw_other_img_calc.c \
 					$(DRAWWALLIMG_DIR)/draw_other_img_raycating.c \
 					$(DRAWWALLIMG_DIR)/draw_wall_img.c \

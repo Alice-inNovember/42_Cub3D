@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 12:33:34 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 13:30:33 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	renderer(t_data *data)
 	make_wall_img(data->texture->wall_img, data->libx);
 	draw_wall_img(data->texture->wall_img, data);
 	// mlx_sync(MLX_SYNC_IMAGE_WRITABLE, data->texture->wall_img->img);
-	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
-	data->texture->background->img, 0, 0);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win,\
 	data->texture->wall_img->img, 0, 0);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
