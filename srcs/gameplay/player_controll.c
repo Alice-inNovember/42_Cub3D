@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 17:41:33 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/06 18:58:24 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	left_right(t_data *data, int x, int y)
 	double		delta_x;
 	double		delta_y;
 
-	speed = 0.2;
+	speed = 0.05;
 	delta_x = data->player->pos_x + x * data->player->plane_x * speed;
 	delta_y = data->player->pos_y + y * data->player->plane_y * speed;
 	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
@@ -36,7 +36,7 @@ static void	up_down(t_data *data, int x, int y)
 	double		delta_x;
 	double		delta_y;
 
-	speed = 0.2;
+	speed = 0.05;
 	delta_x = data->player->pos_x + x * data->player->dir_x * speed;
 	delta_y = data->player->pos_y + y * data->player->dir_y * speed;
 	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
@@ -72,7 +72,7 @@ void	player_rotate(t_data *data, int speed)
 	double	old_plane_x;
 	double	angle;
 
-	angle = 0.015 * speed;
+	angle = 0.005 * speed;
 	old_dir_x = data->player->dir_x;
 	old_plane_x = data->player->plane_x;
 	data->player->dir_x = data->player->dir_x * cos(angle) - \
@@ -103,6 +103,20 @@ int	key_hook(int keycode, t_data *data)
 			mlx_mouse_hide();
 		else
 			mlx_mouse_show();
+	}
+	else if (keycode == 19)
+	{
+		if (data->mouse.mouse_speed < 100)
+			data->mouse.mouse_speed += 1;
+		else
+			printf("alreay mouse speed is max\n");
+	}
+	else if (keycode == 20)
+	{
+		if (data->mouse.mouse_speed > 1)
+			data->mouse.mouse_speed -= 1;
+		else
+			printf("alreay mouse speed is min\n");
 	}
 	else if (keycode == KEY_UP || keycode == 13)
 	{
