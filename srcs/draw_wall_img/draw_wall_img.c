@@ -7,6 +7,7 @@ void	draw_wall_img(t_image *game_img, t_data *data)
 	t_other_draw	draw_info;
 
 	x = 0;
+	draw_background(data->texture->wall_img, data->texture);
 	while (x < G_W)
 	{
 		init_info(&info);

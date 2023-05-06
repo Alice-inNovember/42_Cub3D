@@ -7,6 +7,11 @@
 // draw_game_img.c
 // void			*draw_game_img(t_image game_img, t_data *data);
 
+// draw_background
+void			draw_background(t_image *wall_img, t_texture *tex);
+void			draw_ceiling(t_image *game_img, t_rgb ceiling);
+void			draw_floor(t_image *game_img, t_rgb floor);
+
 // draw_img_init.c
 void			init_info(t_detail_info *info);
 void			init_draw_init(t_other_draw *draw_info);
