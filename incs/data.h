@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/07 20:23:42 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:48:02 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define KEY_DOWN		125
 # define KEY_UP			126
 # define KEY_SHIFT		257
+# define KEY_SPACE		49
 # define MOUSE_SET		18
 # define MOUSE_SPD_UP	19
 # define MOUSE_SPD_DOWN	20
@@ -80,6 +81,7 @@ typedef struct s_player_control
 	int left;
 	int right;
 	int	shift;
+	int	space;
 } t_player_control;
 
 typedef struct s_input

@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/07 20:27:44 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/07 21:12:47 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	key_press_hook(int keycode, t_data *data)
 	else if (keycode == MOUSE_SET || \
 	keycode == MOUSE_SPD_UP || keycode == MOUSE_SPD_DOWN)
 		mouse_set(keycode, data);
+	else if (keycode == KEY_SPACE)
+		door_open_cloce(data);
 	else if (keycode == KEY_W || keycode == KEY_UP)
 		data->control.w = 1;
 	else if (keycode == KEY_S || keycode == KEY_DOWN)
@@ -57,6 +59,35 @@ int	key_press_hook(int keycode, t_data *data)
 	else if (keycode == KEY_SHIFT)
 		data->control.shift = 5;
 	return (0);
+}
+ 
+void	door_open_cloce(t_data *data)
+{
+	t_player	*player;
+	
+	player = data->player;
+	if (fabs(data->player->dir_x) < fabs(data->player->dir_y))
+	{
+		if (player->dir_y < 0)
+			control_door(data->map->map, (int)player->pos_x, (int)player->pos_y - 1);
+		else if (player->dir_y > 0)
+			control_door(data->map->map, (int)player->pos_x, (int)player->pos_y + 1);
+	}
+	else
+	{
+		if (player->dir_x < 0)
+			control_door(data->map->map, (int)player->pos_x + 1, (int)player->pos_y);
+		else if (player->dir_x > 0)
+			control_door(data->map->map, (int)player->pos_x - 1, (int)player->pos_y);
+	}
+}
+
+void	control_door(char **map, int x, int y)
+{
+	if (map[x][y] == 'm')
+		map[x][y] = 'o';
+	else if (map[x][y] == 'o')
+		map[x][y] = 'm';
 }
 
 int key_release_hook(int keycode, t_data *data)
