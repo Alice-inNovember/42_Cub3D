@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 18:00:51 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:16:38 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../../incs/data.h"
 #include "../../incs/util.h"
 #include "../../incs/draw_game_img.h"
+#include "../../incs/player_controll.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -21,8 +22,19 @@
 // MLX_SYNC_WIN_FLUSH_CMD
 // MLX_SYNC_WIN_CMD_COMPLETED
 
+static	int	key_event(t_player_control control)
+{
+	int	flag;
+
+	flag = control.a + control.d + control.left + \
+	control.right + control.s + control.w;
+	return (flag);
+}
+
 int	renderer(t_data *data)
 {
+	if (key_event(data->control))
+		move_control(data);
 	draw_wall_img(data->texture->wall_img, data);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win,\
 	data->texture->wall_img->img, 0, 0);

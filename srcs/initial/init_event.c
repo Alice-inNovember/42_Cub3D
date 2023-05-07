@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:33:40 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 18:49:02 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:25:19 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,31 +36,22 @@ static void	mouse_init(t_mouse *mouse)
 	mouse->mouse_speed = 1;
 }
 
-static int	mouse_handle(int x, int y, void *parme)
-{
-	t_data *data;
-
-	data = parme;
-	data->mouse.mouse_x = x;
-	data->mouse.mouse_y = y;
-	if (data->mouse.tran_mouse == 1)
-	{
-		if (x < G_W / 2)
-			player_rotate(data, data->mouse.mouse_speed);
-		else if (x > G_H / 2)
-			player_rotate(data, -data->mouse.mouse_speed);
-		mlx_mouse_move(data->libx->mlx_win, G_W / 2, G_H / 2);
-	}
-	return (0);
-}
-
 void	init_event(t_data *data)
 {
 	make_wall_img(data->texture->wall_img, data->libx);
+	printf("%p\n", &data->control);
+	data->control.a = 0;
+	data->control.s = 0;
+	data->control.a = 0;
+	data->control.d = 0;
+	data->control.right = 0;
+	data->control.left = 0;
+	data->control.shift = 1;
 	mouse_init(&data->mouse);
 	mlx_hook(data->libx->mlx_win, ON_DESTROY, 0, &red_button_hook, data); //종료
-	mlx_hook(data->libx->mlx_win, 2, 1L<<0, &key_hook, data);
-	// mlx_key_hook(data->libx->mlx_win, &key_hook, data);   //캐릭터 이동.
-	mlx_hook(data->libx->mlx_win, 6, 0, &mouse_handle, data);
+	mlx_hook(data->libx->mlx_win, 2, 1L<<0, &key_press_hook, data);
+	mlx_hook(data->libx->mlx_win, 3, 1L<<1, &key_release_hook, data);
+	// // mlx_key_hook(data->libx->mlx_win, &key_hook, data);   //캐릭터 이동.
+	mlx_hook(data->libx->mlx_win, 6, 0, &mouse_hook, data);
 	mlx_loop_hook(data->libx->mlx, &renderer, data);  //여기서 이미지 넣어줌.
 }

@@ -26,7 +26,10 @@ DRAWWALLIMG_OBJ	=	$(OBJS_DIR)/draw_wall_img
 LIBS_DIR		=	libs
 #FILES
 MAIN_SRCS		=	$(SRCS_DIR)/main.c \
-					$(GM_PLAY_DIR)/player_controll.c \
+					$(GM_PLAY_DIR)/hook_box.c \
+					$(GM_PLAY_DIR)/key_player_move.c \
+					$(GM_PLAY_DIR)/key_player_rotate.c \
+					$(GM_PLAY_DIR)/mouse_set.c \
 					$(GM_PLAY_DIR)/renderer.c \
 					$(INITIAL_DIR)/init_event.c \
 					$(INITIAL_DIR)/init_input.c \

@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 17:50:52 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:23:42 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libs/MLX/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define RED 0
 # define GREEN 1
@@ -30,15 +31,19 @@
 # define N 3
 
 //X11 interface
-# define KEY_W		13
-# define KEY_A		0
-# define KEY_S		1
-# define KEY_D		2
-# define KEY_ESC	53
-# define KEY_LEFT	123
-# define KEY_RIGHT	124
-# define KEY_DOWN	125
-# define KEY_UP		126
+# define KEY_W			13
+# define KEY_A			0
+# define KEY_S			1
+# define KEY_D			2
+# define KEY_ESC		53
+# define KEY_LEFT		123
+# define KEY_RIGHT		124
+# define KEY_DOWN		125
+# define KEY_UP			126
+# define KEY_SHIFT		257
+# define MOUSE_SET		18
+# define MOUSE_SPD_UP	19
+# define MOUSE_SPD_DOWN	20
 
 # define ON_KEYDOWN		2
 # define ON_KEYUP		3
@@ -65,6 +70,17 @@ typedef struct s_mouse
 	int tran_mouse;
 	int	mouse_speed;
 }	t_mouse;
+
+typedef struct s_player_control
+{
+	int	w;
+	int	s;
+	int	a;
+	int	d;
+	int left;
+	int right;
+	int	shift;
+} t_player_control;
 
 typedef struct s_input
 {
@@ -147,6 +163,7 @@ typedef struct s_data
 	t_map_obj	*map_obj;
 	t_mini		*mini;
 	t_mouse		mouse;
+	t_player_control	control;
 }	t_data;
 
 typedef struct s_detail_info

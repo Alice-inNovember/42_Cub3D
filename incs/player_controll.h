@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_controll.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 15:43:30 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/07 20:16:07 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,26 @@
 
 # include "data.h"
 
-int		key_hook(int keycode, t_data *data);
+// hook_box.c
 int		red_button_hook(t_data *data);
+int		key_press_hook(int keycode, t_data *data);
+int 	key_release_hook(int keycode, t_data *data);
+int		mouse_hook(int x, int y, t_data *data);
+// int		key_hook(int keycode, t_data *data);
+
+// key_player_move.c
+void	move_control(t_data *data);
+void	key_player_move(int keycode, t_data *data);
+void	left_right(t_data *data, int x, int y);
+void	up_down(t_data *data, int x, int y);
+
+// key_player_rotate.c
+void	key_player_rotate(int keycode, t_data *data);
 void	player_rotate(t_data *data, int speed);
-void	player_move(t_data *data, int speed);
+
+// mouse_set.c
+void	mouse_set(int keycode, t_data *data);
+void	mouse_tran_control(t_data *data);
+void	mouse_speed_control(int keycode, t_data *data);
 
 #endif
