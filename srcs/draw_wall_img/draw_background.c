@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_background.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:15:45 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:16:00 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../libs/MLX/mlx.h"
 #include "../../incs/data.h"
 #include "../../incs/util.h"
@@ -8,7 +20,6 @@ void	draw_background(t_image *wall_img, t_texture *tex)
 	draw_ceiling(wall_img, tex->ceiling);
 	draw_floor(wall_img, tex->floor);
 }
-
 
 void	draw_ceiling(t_image *game_img, t_rgb ceiling)
 {

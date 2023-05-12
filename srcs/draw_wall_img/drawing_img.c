@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   drawing_img.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:16:50 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:17:13 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/draw_game_img.h"
 
-void	drawing_game_img(t_other_draw *draw_info, t_image *game_img, t_image img, int x)
+void	drawing_game_img(t_other_draw *draw_info, \
+t_image *game_img, t_image img, int x)
 {
 	int	y;
 

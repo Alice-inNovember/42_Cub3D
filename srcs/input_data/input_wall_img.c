@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   input_wall_img.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:24:29 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/input_data.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-static	void temporary_function(t_input *input)
+static void	temporary_function(t_input *input)
 {
 	free(input->ea_png);
 	free(input->no_png);

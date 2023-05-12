@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_player_move.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:18:34 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:19:26 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/data.h"
 #include "../../incs/player_controll.h"
 
@@ -22,7 +34,7 @@ void	key_player_move(int keycode, t_data *data)
 	if (keycode == KEY_UP || keycode == KEY_W)
 	{
 		write(1, "UP\n", 3);
-		up_down(data, 1 ,1);
+		up_down(data, 1, 1);
 	}
 	else if (keycode == KEY_DOWN || keycode == KEY_S)
 	{
@@ -67,15 +79,14 @@ void	up_down(t_data *data, int x, int y)
 	delta_y = data->player->pos_y + y * data->player->dir_y * speed;
 	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
 	{
-		if(data->map->map[(int)(delta_x + 0.1)][(int)(data->player->pos_y)] != '1' \
+		if (data->map->map[(int)(delta_x + 0.1)][(int)(data->player->pos_y)] != '1' \
 		&& data->map->map[(int)(delta_x - 0.1)][(int)(data->player->pos_y)] != '1')
 			data->player->pos_x = delta_x;
 	}
-		
 	if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y)] == '0')
 	{
-		if(data->map->map[(int)(data->player->pos_x)][(int)(delta_y + 0.1)] != '1' \
+		if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y + 0.1)] != '1' \
 		&& data->map->map[(int)(data->player->pos_x)][(int)(delta_y - 0.1)] != '1')
-			data->player->pos_y = delta_y;	
+			data->player->pos_y = delta_y;
 	}
 }

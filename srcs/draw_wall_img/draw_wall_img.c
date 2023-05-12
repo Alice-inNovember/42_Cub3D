@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_wall_img.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:16:38 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:16:44 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/draw_game_img.h"
 
 void	draw_wall_img(t_image *game_img, t_data *data)
@@ -24,4 +36,3 @@ void	draw_wall_img(t_image *game_img, t_data *data)
 		x++;
 	}
 }
-

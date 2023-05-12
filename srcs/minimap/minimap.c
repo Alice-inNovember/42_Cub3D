@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minimap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:28:09 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/12 14:29:23 by junlee2          ###   ########seoul.kr  */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/minimap.h"
 
 int	minimap(t_map *map_data, t_data *data)
@@ -22,14 +34,15 @@ int	minimap(t_map *map_data, t_data *data)
 
 void	make_mini_player(t_mini *mini, t_libx *mlx)
 {
-	int x;
+	int	x;
 	int	y;
 
 	y = 0;
 	mini->player = malloc(sizeof(t_image) * 1);
 	mini->player->img = mlx_new_image(mlx->mlx, 4, 4);
 	mini->player->addr = mlx_get_data_addr(mini->player->img, \
-	&mini->player->bits_per_pixel, &mini->player->line_length, &mini->player->endian);
+	&mini->player->bits_per_pixel, &mini->player->line_length, \
+	&mini->player->endian);
 	while (y < 4)
 	{
 		x = 0;
@@ -47,7 +60,7 @@ void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
 int	new_image_minimap(t_mini *mini, t_libx *mlx)
@@ -61,7 +74,8 @@ int	new_image_minimap(t_mini *mini, t_libx *mlx)
 		x = 0;
 		while (x < mini->parti_x)
 		{
-			new_img(mini->mini_obj[y][x].map, &(mini->mini_obj[y][x].img), mlx->mlx);
+			new_img(mini->mini_obj[y][x].map, \
+			&(mini->mini_obj[y][x].img), mlx->mlx);
 			x++;
 		}
 		y++;
@@ -71,12 +85,13 @@ int	new_image_minimap(t_mini *mini, t_libx *mlx)
 
 int	new_img(char **map, t_image *img, void *mlx)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	void	(*fp[2])(t_image *, int, int);
 
 	img->img = mlx_new_image(mlx, 150, 150);
-	img->addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel), &(img->line_length), &(img->endian));
+	img->addr = mlx_get_data_addr(img->img, &(img->bits_per_pixel), \
+	&(img->line_length), &(img->endian));
 	init_fp(fp);
 	i = 0;
 	while (i < 10)

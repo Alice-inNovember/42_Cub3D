@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 14:48:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 17:37:26 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:29:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int argc, char **argv)
 	input_data(&data);
 	if (minimap(data.map, &data) == 1)
 		err_exit("map vaildity error");
-	// test_input(&data);
 	mlx_do_key_autorepeaton(data.libx->mlx);
 	mlx_mouse_move(data.libx->mlx_win, G_W / 2, G_H / 2);
 	init_event(&data);
