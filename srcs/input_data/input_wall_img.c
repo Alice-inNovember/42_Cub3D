@@ -6,24 +6,36 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:24:29 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 17:05:53 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/input_data.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "../../incs/util.h"
+
+char	*get_wall_tex(char *path)
+{
+	char	**temp;
+
+	temp = ft_split(path, ' ');
+	if (arr_len(temp) != 2)
+		err_exit("Error\n : Map not valid");
+	if (ft_strcmp(&temp[1][ft_strlen(temp[1]) - 4], ".xpm"))
+		err_exit("Error\n : Map not valid");
+	free(path);
+	path = ft_strdup(temp[1]);
+	free_arr(temp);
+	return (path);
+}
 
 static void	temporary_function(t_input *input)
 {
-	free(input->ea_png);
-	free(input->no_png);
-	free(input->so_png);
-	free(input->we_png);
-	input->ea_png = "imgs/E_wall.xpm";
-	input->no_png = "imgs/N_wall.xpm";
-	input->so_png = "imgs/S_wall.xpm";
-	input->we_png = "imgs/W_wall.xpm";
+	input->ea_png = get_wall_tex(input->ea_png);
+	input->no_png = get_wall_tex(input->no_png);
+	input->so_png = get_wall_tex(input->so_png);
+	input->we_png = get_wall_tex(input->we_png);
 }
 
 void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)

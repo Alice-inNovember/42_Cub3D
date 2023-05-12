@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:48:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 17:57:47 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 16:03:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,12 @@ char	*ft_strdup(const char *s1);
 void	*ft_memset(void *b, int c, size_t len);
 
 void	test_input(t_data *data);
+
+char	**ft_split(char const *s, char c);
+int		ft_atoi(const char *str);
+
+int		arr_len(char **arr);
+void	free_arr(char **arr);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 11:38:20 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 14:50:57 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,40 @@ void	ft_strcpy(char *to, char *str)
 		i++;
 	}
 	return ;
+}
+
+static int	ft_isspace(char in)
+{
+	if (in == '\t' || in == '\n' || in == '\v')
+		return (1);
+	if (in == '\f' || in == '\r' || in == ' ')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int		returni;
+	int		sign;
+	int		i;
+
+	returni = 0;
+	sign = 1;
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		returni *= 10;
+		returni += str[i] - '0';
+		i++;
+	}
+	return (returni * sign);
 }
