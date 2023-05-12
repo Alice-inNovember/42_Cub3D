@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 17:01:38 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/12 19:27:55 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
 	i = 0;
 	while (inputstr[i + 1])
 		i++;
-	while (is_set(inputstr[i - cnt], "01 NSEW"))
+	while (is_set(inputstr[i - cnt], "01 NSEWM"))
 		cnt++;
 	if (cnt == 0)
 		err_exit("Error\n : Map not valid");

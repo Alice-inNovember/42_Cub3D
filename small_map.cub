@@ -1,12 +1,12 @@
 F 220,100,0
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
+NO ./IMGS/N_wall.xpm
+SO ./IMGS/S_wall.xpm
 C 225,30,0
 
-EA ./path_to_the_east_texture
-WE ./path_to_the_west_texture
+EA ./IMGS/E_wall.xpm
+WE ./IMGS/W_wall.xpm
 
  1111111111
- 111111M111
- 1111N11111
+ 1M00000N01
+ 1000000001
  1111111111

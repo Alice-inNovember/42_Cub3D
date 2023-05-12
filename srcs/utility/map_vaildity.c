@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 17:06:58 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/12 19:41:10 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 {
+	char *str = malloc(sizeof(char) * 10);
+	str[0] = '1';
 	int		y;
 	int		x;
 
 	y = 0;
-	while (y < map_data->ysize - 1)
+	while (y < map_data->ysize)
 	{
 		x = 0;
 		while (x < map_data->xsize)
@@ -33,7 +35,6 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 				return (1);
 			x++;
 		}
-		exit(0);
 		y++;
 	}
 	return (0);

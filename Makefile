@@ -42,7 +42,10 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(MINIMAP_DIR)/find_minimap.c \
 					$(MINIMAP_DIR)/mini_insert.c \
 					$(MINIMAP_DIR)/mini_obj_insert.c \
+					$(MINIMAP_DIR)/new_image_minimap.c \
+					$(MINIMAP_DIR)/new_image_case.c \
 					$(MINIMAP_DIR)/minimap.c \
+					$(MINIMAP_DIR)/make_mini_player.c \
 					$(UTILITY_DIR)/colors.c\
 					$(UTILITY_DIR)/map_vaildity.c \
 					$(UTILITY_DIR)/util1.c \
