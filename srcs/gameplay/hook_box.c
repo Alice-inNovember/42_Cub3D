@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   hook_box.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
 /*   Updated: 2023/05/12 14:39:10 by sounchoi         ###   ########.fr       */
@@ -23,17 +23,17 @@ int	red_button_hook(t_data *data)
 	return (0);
 }
 
-// int	key_hook(int keycode, t_data *data)
-// {
-// 	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
-// 		key_player_rotate(keycode, data);
-// 	else if (keycode == MOUSE_SET || \
-// 	keycode == MOUSE_SPD_UP || keycode == MOUSE_SPD_DOWN)
-// 		mouse_set(keycode, data);
-// 	else
-// 		key_player_move(keycode, data);
-// 	return (0);
-// }
+int	key_hook(int keycode, t_data *data)
+{
+	if (keycode == KEY_LEFT || keycode == KEY_RIGHT)
+		key_player_rotate(keycode, data);
+	else if (keycode == MOUSE_SET || \
+	keycode == MOUSE_SPD_UP || keycode == MOUSE_SPD_DOWN)
+		mouse_set(keycode, data);
+	else
+		key_player_move(keycode, data);
+	return (0);
+}
 
 int	key_press_hook(int keycode, t_data *data)
 {

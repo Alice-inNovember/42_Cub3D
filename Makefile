@@ -47,6 +47,8 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(UTILITY_DIR)/map_vaildity.c \
 					$(UTILITY_DIR)/util1.c \
 					$(UTILITY_DIR)/util2.c \
+					$(UTILITY_DIR)/util3.c \
+					$(UTILITY_DIR)/util4.c \
 					$(UTILITY_DIR)/test.c \
 					$(INPUTDATA_DIR)/input_data.c \
 					$(INPUTDATA_DIR)/input_img.c \
