@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/06 13:14:48 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/12 17:06:58 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 				return (1);
 			x++;
 		}
+		exit(0);
 		y++;
 	}
 	return (0);
@@ -66,16 +67,16 @@ int	check_four_point(t_map *map_data, int y, int x)
 {
 	if (map_data->map[y][x] != ' ')
 		return (0);
-	if (y > 0 && map_data->map[y - 1][x] != '1'
+	if (y > 0 && map_data->map[y - 1][x] != '1' && map_data->map[y - 1][x] != 'M' \
 		&& map_data->map[y - 1][x] != ' ')
 		return (1);
-	if (y < map_data->ysize - 2 && map_data->map[y + 1][x] != '1'
+	if (y < map_data->ysize - 2 && map_data->map[y + 1][x] != '1' && map_data->map[y + 1][x] != 'M' \
 		&& map_data->map[y + 1][x] != ' ')
 		return (1);
-	if (x > 0 && map_data->map[y][x - 1] != '1'
+	if (x > 0 && map_data->map[y][x - 1] != '1' && map_data->map[y][x - 1] != 'M' \
 		&& map_data->map[y][x - 1] != ' ')
 		return (1);
-	if (x < map_data->xsize - 1 && map_data->map[y][x + 1] != '1'
+	if (x < map_data->xsize - 1 && map_data->map[y][x + 1] != '1' && map_data->map[y][x + 1] != 'M' \
 		&& map_data->map[y][x + 1] != ' ')
 		return (1);
 	return (0);

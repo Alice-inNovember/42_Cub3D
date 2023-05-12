@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_wall_img.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:24:29 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 15:04:56 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
 	mlx_xpm_file_to_image(mlx->mlx, input->so_png, &wid, &hei);
 	tex->wall_w->img = \
 	mlx_xpm_file_to_image(mlx->mlx, input->we_png, &wid, &hei);
+	tex->door->img =
+	mlx_xpm_file_to_image(mlx->mlx, "imgs/door.xpm", &wid, &hei);
 }
 
 void	make_t_images(t_texture *tex)
@@ -56,4 +58,7 @@ void	make_t_images(t_texture *tex)
 	tex->wall_w->addr = \
 	mlx_get_data_addr(tex->wall_w->img, &tex->wall_w->bits_per_pixel, \
 					&tex->wall_w->line_length, &tex->wall_w->endian);
+	tex->door->addr = \
+	mlx_get_data_addr(tex->door->img, &tex->door->bits_per_pixel, \
+					&tex->door->line_length, &tex->door->endian);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/20 17:16:54 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 17:01:38 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	parse_input(t_data *data, char	**inputstr, size_t i)
 		data->input->floor = ft_strdup(inputstr[i]);
 	else if (inputstr[i][0] == 'C')
 		data->input->ceiling = ft_strdup(inputstr[i]);
-	else if (!is_set(inputstr[i], "\n 01NSEW"))
+	else if (!is_set(inputstr[i], "\n 01NSEWM"))
 		err_exit("Error\n : Map not valid");
 }
 
