@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 15:08:29 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/12 17:11:25 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ t_rgb	input_rgb(char *input, char op)
 	rgb = ft_split(tmp[1], ',');
 	if (arr_len(rgb) != 3)
 		err_exit("Error\nInput is not vaild!");
+	free_arr(tmp);
+	free_arr(rgb);
 	return (create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[0]), ft_atoi(rgb[0])));
 }
 
