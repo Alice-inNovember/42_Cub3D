@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 17:00:42 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 00:36:36 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ typedef struct s_map
 
 typedef struct s_mouse
 {
-	int mouse_x;
-	int mouse_y;
-	int tran_mouse;
+	int	mouse_x;
+	int	mouse_y;
+	int	tran_mouse;
 	int	mouse_speed;
 }	t_mouse;
 
@@ -78,11 +78,11 @@ typedef struct s_player_control
 	int	s;
 	int	a;
 	int	d;
-	int left;
-	int right;
+	int	left;
+	int	right;
 	int	shift;
 	int	space;
-} t_player_control;
+}	t_player_control;
 
 typedef struct s_input
 {
@@ -158,15 +158,15 @@ typedef struct s_map_obj
 
 typedef struct s_data
 {
-	t_libx		*libx;
-	t_input		*input;
-	t_map		*map;
-	t_texture	*texture;
-	t_player	*player;
-	t_image		*screen;
-	t_map_obj	*map_obj;
-	t_mini		*mini;
-	t_mouse		mouse;
+	t_libx				*libx;
+	t_input				*input;
+	t_map				*map;
+	t_texture			*texture;
+	t_player			*player;
+	t_image				*screen;
+	t_map_obj			*map_obj;
+	t_mini				*mini;
+	t_mouse				mouse;
 	t_player_control	control;
 }	t_data;
 
