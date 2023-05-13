@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:28:09 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 23:06:54 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:39:17 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ int	minimap(t_map *map_data, t_data *data)
 		mini_obj_free(mini, mini->parti_y);
 		return (1);
 	}
-	// find_minimap(&mini);
 	if (new_image_minimap(mini, data->libx) == 1)
 		return (1);
 	make_mini_player(mini, data->libx);
 	data->mini = mini;
 	return (0);
 }
-
 
 void	my_mlx_pixel_put(t_image *data, int x, int y, int color)
 {

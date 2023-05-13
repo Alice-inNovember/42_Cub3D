@@ -29,8 +29,8 @@ void	print_minimap(t_mini_obj mini_obj);
 
 // new_image_minimap.c
 int		new_image_minimap(t_mini *mini, t_libx *mlx);
-void	init_fp(void (*fp[3])(t_image *, int, int));
-int		new_img(char **map, t_image *img, void *mlx, void (*fp[3])(t_image *, int, int));
+void	init_fp(void (*fp[4])(t_image *, int, int));
+int		new_img(int **map, t_image *img, void *mlx, void (*fp[4])(t_image *, int, int));
 
 // new_image_case.c
 void	mini_draw_wall(t_image *img, int y, int x);

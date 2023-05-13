@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   new_image_minimap.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 14:24:43 by junlee2           #+#    #+#             */
+/*   Updated: 2023/05/13 16:38:53 by sounchoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/minimap.h"
 
 int	new_image_minimap(t_mini *mini, t_libx *mlx)
 {
 	int	x;
 	int	y;
+	void	(*fp[4])(t_image *, int, int);
 
 	y = 0;
-	void	(*fp[3])(t_image *, int, int);
 	init_fp(fp);
 	while (y < mini->parti_y)
 	{
@@ -22,7 +34,8 @@ int	new_image_minimap(t_mini *mini, t_libx *mlx)
 	return (0);
 }
 
-int	new_img(char **map, t_image *img, void *mlx, void (*fp[3])(t_image *, int, int))
+int	new_img(int **map, t_image *img, void *mlx, \
+void (*fp[4])(t_image *, int, int))
 {
 	int		i;
 	int		j;
@@ -36,7 +49,7 @@ int	new_img(char **map, t_image *img, void *mlx, void (*fp[3])(t_image *, int, i
 		j = 0;
 		while (j < 10)
 		{
-			fp[map[i][j] % 3](img, i, j);
+			fp[map[i][j]](img, i, j);
 			j++;
 		}
 		i++;
@@ -44,10 +57,10 @@ int	new_img(char **map, t_image *img, void *mlx, void (*fp[3])(t_image *, int, i
 	return (0);
 }
 
-void	init_fp(void (*fp[3])(t_image *, int, int))
+void	init_fp(void (*fp[4])(t_image *, int, int))
 {
-	fp[0] = mini_draw_wall;
-	fp[1] = mini_draw_floor;
-	fp[2] = mini_draw_out;
-	fp[3] = mini_draw_door;
+	fp[0] = mini_draw_out;
+	fp[1] = mini_draw_door;
+	fp[2] = mini_draw_wall;
+	fp[3] = mini_draw_floor;
 }

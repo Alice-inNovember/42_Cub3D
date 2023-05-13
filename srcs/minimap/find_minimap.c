@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_minimap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:43 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:26:47 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 16:42:26 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	find_minimap(t_mini *mini)
 			printf("%d %d의 영역\n", i, j);
 			print_minimap(mini->mini_obj[i][j]);
 			j++;
-		}
 		i++;
+		}
 	}
 }
 
@@ -40,7 +40,7 @@ void	print_minimap(t_mini_obj mini_obj)
 	while (i < 10)
 	{
 		j = 0;
-		while (j < 11)
+		while (j < 10)
 		{
 			printf("%d", mini_obj.map[i][j]);
 			j++;
