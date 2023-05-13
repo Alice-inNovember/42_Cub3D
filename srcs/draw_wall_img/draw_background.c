@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:15:45 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 17:07:08 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 23:56:45 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	draw_ceiling(t_image *game_img, t_rgb ceiling)
 
 	y = 0;
 	max = G_H / 2;
+	printf("ceiling %d\t", ceiling);
 	while (y < max)
 	{
 		x = 0;
@@ -49,6 +50,7 @@ void	draw_floor(t_image *game_img, t_rgb floor)
 
 	y = G_H / 2;
 	max = G_H;
+	printf("floor %d\n", floor);
 	while (y < max)
 	{
 		x = 0;

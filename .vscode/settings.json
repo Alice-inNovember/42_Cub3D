@@ -12,6 +12,7 @@
 		"chrono": "c",
 		"limits": "c",
 		"ratio": "c",
-		"ios": "c"
+		"ios": "c",
+		"math.h": "c"
 	}
 }

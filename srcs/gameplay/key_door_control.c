@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 17:17:07 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 23:31:26 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	door_open_cloce(t_data *data)
 	}
 	else
 	{
-		if (player->dir_x < 0)
+		if (player->dir_x > 0)
 			control_door(data->map->map, \
 			(int)player->pos_x + 1, (int)player->pos_y);
-		else if (player->dir_x > 0)
+		else if (player->dir_x < 0)
 			control_door(data->map->map, \
 			(int)player->pos_x - 1, (int)player->pos_y);
 	}

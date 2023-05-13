@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 16:41:41 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 23:48:56 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 			if (check_outline_point(map_data, y, x) == 1)
 				return (1);
 			if (check_four_point(map_data, y, x) == 1)
+				return (1);
+			if (check_door_ok(map_data, y, x) == 1)
 				return (1);
 			x++;
 		}
@@ -83,4 +85,15 @@ int	check_four_point(t_map *map_data, int y, int x)
 		&& map_data->map[y][x + 1] != ' ')
 		return (1);
 	return (0);
+}
+
+int	check_door_ok(t_map *map_data, int y, int x)
+{
+	if (map_data->map[y][x] != 'M')
+		return (0);
+	if (map_data->map[y + 1][x] == '1' && map_data->map[y - 1][x] == '1')
+		return (0);
+	if (map_data->map[y][x + 1] == '1' && map_data->map[y][x - 1] == '1')
+		return (0);
+	return (1);
 }
