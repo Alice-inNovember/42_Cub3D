@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:43 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 16:38:53 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 00:25:23 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	new_image_minimap(t_mini *mini, t_libx *mlx)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 	void	(*fp[4])(t_image *, int, int);
 
 	y = 0;
@@ -59,8 +59,8 @@ void (*fp[4])(t_image *, int, int))
 
 void	init_fp(void (*fp[4])(t_image *, int, int))
 {
-	fp[0] = mini_draw_out;
-	fp[1] = mini_draw_door;
-	fp[2] = mini_draw_wall;
-	fp[3] = mini_draw_floor;
+	fp[0] = &mini_draw_out;
+	fp[1] = &mini_draw_door;
+	fp[2] = &mini_draw_wall;
+	fp[3] = &mini_draw_floor;
 }
