@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_player_move.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:18:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:19:26 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 17:34:32 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,11 @@ void	left_right(t_data *data, int x, int y)
 	speed = 0.005 * data->control.shift;
 	delta_x = data->player->pos_x + x * data->player->plane_x * speed;
 	delta_y = data->player->pos_y + y * data->player->plane_y * speed;
-	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
+	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0' ||
+		data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == 'O')
 		data->player->pos_x = delta_x;
-	if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y)] == '0')
+	if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y)] == '0' ||
+		data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == 'O')
 		data->player->pos_y = delta_y;
 }
 
@@ -73,20 +75,31 @@ void	up_down(t_data *data, int x, int y)
 	double		speed;
 	double		delta_x;
 	double		delta_y;
+	double		pos_x;
+	double		pos_y;
 
+	pos_x = data->player->pos_x;
+	pos_y = data->player->pos_y;
 	speed = 0.005 * data->control.shift;
-	delta_x = data->player->pos_x + x * data->player->dir_x * speed;
-	delta_y = data->player->pos_y + y * data->player->dir_y * speed;
-	if (data->map->map[(int)(delta_x)][(int)(data->player->pos_y)] == '0')
+	delta_x = pos_x + x * data->player->dir_x * speed;
+	delta_y = pos_y + y * data->player->dir_y * speed;
+	if (data->map->map[(int)(delta_x)][(int)(pos_y)] == '0' ||
+		data->map->map[(int)(delta_x)][(int)(pos_y)] == 'O')
 	{
-		if (data->map->map[(int)(delta_x + 0.1)][(int)(data->player->pos_y)] != '1' \
-		&& data->map->map[(int)(delta_x - 0.1)][(int)(data->player->pos_y)] != '1')
+		if ((data->map->map[(int)(delta_x + 0.1)][(int)(pos_y)] != '1'
+		&& data->map->map[(int)(delta_x - 0.1)][(int)(pos_y)] != '1') &&
+		(data->map->map[(int)(delta_x + 0.1)][(int)(pos_y)] != 'M'
+		&& data->map->map[(int)(delta_x - 0.1)][(int)(pos_y)] != 'M'))
 			data->player->pos_x = delta_x;
 	}
-	if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y)] == '0')
+	if (data->map->map[(int)(pos_x)][(int)(delta_y)] == '0' ||
+		data->map->map[(int)(pos_x)][(int)(delta_y)] == 'O')
 	{
-		if (data->map->map[(int)(data->player->pos_x)][(int)(delta_y + 0.1)] != '1' \
-		&& data->map->map[(int)(data->player->pos_x)][(int)(delta_y - 0.1)] != '1')
+		if ((data->map->map[(int)(pos_x)][(int)(delta_y + 0.1)] != '1' \
+		&& data->map->map[(int)(pos_x)][(int)(delta_y - 0.1)] != '1') &&
+		(data->map->map[(int)(pos_x)][(int)(delta_y + 0.1)] != 'M' 
+		&& data->map->map[(int)(pos_x)][(int)(delta_y - 0.1)] != 'M'))
 			data->player->pos_y = delta_y;
 	}
+	printf("%s\n", data->map->map[(int)(data->player->pos_x)]);
 }

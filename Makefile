@@ -31,6 +31,7 @@ MAIN_SRCS		=	$(SRCS_DIR)/main.c \
 					$(GM_PLAY_DIR)/key_player_rotate.c \
 					$(GM_PLAY_DIR)/mouse_set.c \
 					$(GM_PLAY_DIR)/renderer.c \
+					$(GM_PLAY_DIR)/key_door_control.c \
 					$(INITIAL_DIR)/init_event.c \
 					$(INITIAL_DIR)/init_input.c \
 					$(INITIAL_DIR)/init_libx.c \

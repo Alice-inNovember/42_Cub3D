@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/07 20:16:07 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:14:50 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ void	player_rotate(t_data *data, int speed);
 void	mouse_set(int keycode, t_data *data);
 void	mouse_tran_control(t_data *data);
 void	mouse_speed_control(int keycode, t_data *data);
+
+// key_door_contrl.c
+void	door_open_cloce(t_data *data);
+void	control_door(char **map, int x, int y);
 
 #endif

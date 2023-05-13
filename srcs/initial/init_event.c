@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_event.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:33:40 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:23:01 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 17:12:25 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static void	mouse_init(t_mouse *mouse)
 void	init_event(t_data *data)
 {
 	make_wall_img(data->texture->wall_img, data->libx);
-	printf("%p\n", &data->control);
 	data->control.a = 0;
 	data->control.s = 0;
 	data->control.a = 0;

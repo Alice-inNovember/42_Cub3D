@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 19:41:10 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 16:41:41 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 int	map_vaildity(t_map *map_data, t_map_obj *map_obj)
 {
-	char *str = malloc(sizeof(char) * 10);
-	str[0] = '1';
 	int		y;
 	int		x;
 
@@ -68,16 +66,20 @@ int	check_four_point(t_map *map_data, int y, int x)
 {
 	if (map_data->map[y][x] != ' ')
 		return (0);
-	if (y > 0 && map_data->map[y - 1][x] != '1' && map_data->map[y - 1][x] != 'M' \
+	if (y > 0 && map_data->map[y - 1][x] != '1' && \
+		map_data->map[y - 1][x] != 'M' \
 		&& map_data->map[y - 1][x] != ' ')
 		return (1);
-	if (y < map_data->ysize - 2 && map_data->map[y + 1][x] != '1' && map_data->map[y + 1][x] != 'M' \
+	if (y < map_data->ysize - 2 && map_data->map[y + 1][x] != '1' \
+		&& map_data->map[y + 1][x] != 'M' \
 		&& map_data->map[y + 1][x] != ' ')
 		return (1);
-	if (x > 0 && map_data->map[y][x - 1] != '1' && map_data->map[y][x - 1] != 'M' \
+	if (x > 0 && map_data->map[y][x - 1] != '1' && \
+		map_data->map[y][x - 1] != 'M' \
 		&& map_data->map[y][x - 1] != ' ')
 		return (1);
-	if (x < map_data->xsize - 1 && map_data->map[y][x + 1] != '1' && map_data->map[y][x + 1] != 'M' \
+	if (x < map_data->xsize - 1 && map_data->map[y][x + 1] != '1' && \
+		map_data->map[y][x + 1] != 'M' \
 		&& map_data->map[y][x + 1] != ' ')
 		return (1);
 	return (0);

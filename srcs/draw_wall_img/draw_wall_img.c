@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_wall_img.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:16:38 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:16:44 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 17:08:01 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	draw_wall_img(t_image *game_img, t_data *data)
 		input_need_for_raycating(data->player, &info, x);
 		input_ray_step(data->player, &info);
 		ray_casting(data->map, &info);
-		select_img(data->player, &info);
+		if (info.hit == 1)
+			select_img(data->player, &info);
+		else if (info.hit == 2)
+			info.four_dir = 4;
 		calc_dist_valti(&info);
 		draw_pixel_st_en(&draw_info, &info);
 		calc_draw_img_others(&draw_info, data->player, &info);

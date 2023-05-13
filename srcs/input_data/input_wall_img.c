@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 17:05:53 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 17:02:52 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	temporary_function(t_input *input)
 	input->no_png = get_wall_tex(input->no_png);
 	input->so_png = get_wall_tex(input->so_png);
 	input->we_png = get_wall_tex(input->we_png);
+	// input->door_png = get_wall_tex(input->door_png);
 }
 
 void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
@@ -52,8 +53,8 @@ void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
 	mlx_xpm_file_to_image(mlx->mlx, input->so_png, &wid, &hei);
 	tex->wall_w->img = \
 	mlx_xpm_file_to_image(mlx->mlx, input->we_png, &wid, &hei);
-	tex->door->img =
-	mlx_xpm_file_to_image(mlx->mlx, "imgs/door.xpm", &wid, &hei);
+	tex->door->img = \
+	mlx_xpm_file_to_image(mlx->mlx, "./imgs/door.xpm", &wid, &hei);
 }
 
 void	make_t_images(t_texture *tex)

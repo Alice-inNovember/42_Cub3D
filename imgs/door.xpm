@@ -1,9 +1,8 @@
 /* XPM */
 static char *result[] = {
 /* columns rows colors chars-per-pixel */
-"64 64 3 1 ",
+"64 64 2 1 ",
 "0 c #FFFFFF",
-"1 c #FFFFFF",
 "2 c #FF0000",
 /* pixels */
 "2222222222222222222222222222222222222222222222222222222222222222",

@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 15:02:29 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/13 17:00:42 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ typedef struct s_input
 	char	*so_png;
 	char	*we_png;
 	char	*ea_png;
+	char	*door_png;
 	char	*floor;
 	char	*ceiling;
 	char	**map;
@@ -113,7 +114,7 @@ typedef struct s_image
 
 typedef struct s_mini_obj
 {
-	char	**map;
+	int		**map;
 	t_image	img;
 }	t_mini_obj;
 
@@ -127,7 +128,7 @@ typedef struct s_mini
 
 typedef struct s_texture
 {
-	t_image	img_box[4];
+	t_image	img_box[5];
 	t_image	*wall_n;
 	t_image	*wall_s;
 	t_image	*wall_e;

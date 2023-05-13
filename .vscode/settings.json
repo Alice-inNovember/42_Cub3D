@@ -6,6 +6,12 @@
 		"unistd.h": "c",
 		"map_vaildity.h": "c",
 		"input_data.h": "c",
-		"draw_game_img.h": "c"
+		"draw_game_img.h": "c",
+		"minimap.h": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"limits": "c",
+		"ratio": "c",
+		"ios": "c"
 	}
 }

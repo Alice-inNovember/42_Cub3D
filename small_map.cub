@@ -1,12 +1,12 @@
 F 220,100,0
-NO ./IMGS/N_wall.xpm
-SO ./IMGS/S_wall.xpm
+NO ./imgs/N_wall.xpm
+SO ./imgs/S_wall.xpm
 C 225,30,0
 
-EA ./IMGS/E_wall.xpm
-WE ./IMGS/W_wall.xpm
+EA ./imgs/E_wall.xpm
+WE ./imgs/W_wall.xpm
 
  1111111111
- 1M00000N01
+ 1M0000MW01
  1000000001
  1111111111

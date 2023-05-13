@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_other_img_raycating.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:16:27 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 14:16:31 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/13 17:06:19 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	ray_casting(t_map *map, t_detail_info *info)
 		}
 		if (map->map[info->map_x][info->map_y] == '1')
 			info->hit = 1;
+		else if (map->map[info->map_x][info->map_y] == 'M')
+			info->hit = 2;
 	}
 }
 
