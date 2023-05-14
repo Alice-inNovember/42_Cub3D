@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:08:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 17:04:18 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 17:43:24 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (0);
+}
+
+int	is_in_set(char c, char *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

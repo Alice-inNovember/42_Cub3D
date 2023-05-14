@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_insert.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:26:52 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 16:01:41 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:54:05 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	mini_insert(t_map *map_data, t_mini *mini)
 	mini_insert_xy(map_data, mini);
 	if (mini_obj_malloc(mini) == 1)
 	{
-		printf("%s\n", "malloc_fail..");
 		return (1);
 	}
 	return (0);

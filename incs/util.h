@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:48:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 16:03:44 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 17:43:48 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	err_exit(char *str);
 void	*ft_malloc(size_t size);
 void	*ft_calloc(size_t count, size_t size);
 int		is_set(char *str, char *set);
+int		is_in_set(char c, char *set);
 size_t	ft_strlen(const char *str);
 void	ft_strcpy(char *to, char *str);
 char	*ft_strdup(const char *s1);

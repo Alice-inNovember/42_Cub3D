@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 16:01:02 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 17:54:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_rgb	input_rgb(char *input, char op)
 	r_rgb = create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[1]), ft_atoi(rgb[2]));
 	free_arr(tmp);
 	free_arr(rgb);
-	printf("=====|%s| : %x=====\n", input, r_rgb);
 	return (r_rgb);
 }
 

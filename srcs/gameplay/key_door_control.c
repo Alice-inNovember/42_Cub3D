@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_door_control.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 23:31:26 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:53:09 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	door_open_cloce(t_data *data)
 	t_player	*player;
 
 	player = data->player;
-	printf("%d\n", 123);
 	if (fabs(data->player->dir_x) < fabs(data->player->dir_y))
 	{
 		if (player->dir_y < 0)

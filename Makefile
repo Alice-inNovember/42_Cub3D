@@ -43,7 +43,6 @@ SRCS			=	$(D_SRCS)/main.c \
 					$(SD_INITIAL)/init_player.c \
 					$(SD_INITIAL)/init_screen.c \
 					$(SD_INITIAL)/init_map_obj.c \
-					$(SD_MINIMAP)/find_minimap.c \
 					$(SD_MINIMAP)/mini_insert.c \
 					$(SD_MINIMAP)/mini_obj_insert.c \
 					$(SD_MINIMAP)/new_image_minimap.c \
@@ -56,7 +55,6 @@ SRCS			=	$(D_SRCS)/main.c \
 					$(SD_UTILITY)/util2.c \
 					$(SD_UTILITY)/util3.c \
 					$(SD_UTILITY)/util4.c \
-					$(SD_UTILITY)/test.c \
 					$(SD_INPUTDATA)/input_data.c \
 					$(SD_INPUTDATA)/input_img.c \
 					$(SD_INPUTDATA)/input_player.c \
