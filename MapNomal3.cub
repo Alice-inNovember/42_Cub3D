@@ -1,0 +1,14 @@
+F 2,82,82
+NO ./imgs/N_wall.xpm
+SO ./imgs/S_wall.xpm
+
+C 100,149,237
+WE ./imgs/E_wall.xpm
+EA ./imgs/E_wall.xpm
+
+
+ 1111111111
+ 1M0000MN01
+ 11M1001001
+ 1000000001
+ 1111111111
