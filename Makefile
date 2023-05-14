@@ -5,7 +5,7 @@ CC					=	cc
 RM					=	rm -rf
 LIBC				=	ar rcs
 #FLAGS-----------------------------------------------------
-CFLAGS				=	-Wall -Wextra -Werror
+CFLAGS				=	-Wall -Wextra -Werror -fsanitize=address
 MLXFLAGS			=	-framework OpenGL -framework AppKit
 #DIRS------------------------------------------------------
 D_LIBS			=	libs

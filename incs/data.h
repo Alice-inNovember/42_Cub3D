@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 00:36:36 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:41:33 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,17 @@
 # define ON_MOUSEMOVE	6
 # define ON_EXPOSE		12
 # define ON_DESTROY		17
+
+# define E_MAPVALID		"Error\nMap Vaildity Error"
+# define E_ARGCNT		"Error\nArg Cnt Error"
+# define E_TEXTURED		"Error\nTexture Dup"
+# define E_EXETENSION	"Error\nEXETENSION (Map > .cub | Tex > .xpm)"
+# define E_FOPEN_FAIL	"Error\nFile open faild"
+# define E_PLAYERCNT	"Error\nMap Vaildity Error - Player cnt"
+# define E_MAP_RGB		"Error\nRGB Input Not Valid"
+# define E_MALLOC		"Error\nMalloc Err"
+# define E_GNL			"Error\nMalloc Err"
+
 //------------------------------
 
 typedef int	t_rgb;

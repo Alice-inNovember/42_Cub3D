@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 17:58:51 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:43:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	key_press_hook(int keycode, t_data *data)
 	else if (keycode == KEY_LEFT)
 		data->control.left = 1;
 	else if (keycode == KEY_SHIFT)
-		data->control.shift = 30;
+		data->control.shift = 20;
 	return (0);
 }
 

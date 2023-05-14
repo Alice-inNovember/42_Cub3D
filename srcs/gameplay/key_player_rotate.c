@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:19:32 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 18:04:02 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:39:45 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ void	key_player_rotate(int keycode, t_data *data)
 {
 	if (keycode == KEY_LEFT)
 	{
-		write(1, "<-\n", 4);
 		player_rotate(data, 30);
 	}
 	if (keycode == KEY_RIGHT)
 	{
-		write(1, "->\n", 4);
 		player_rotate(data, -30);
 	}
 }

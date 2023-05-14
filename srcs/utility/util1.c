@@ -6,13 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/03/17 11:44:11 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:35:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "../../incs/input_data.h"
 
 void	err_exit(char *str)
 {
@@ -26,7 +27,7 @@ void	*ft_malloc(size_t size)
 
 	temp = malloc(size);
 	if (!temp)
-		err_exit("Error\n : malloc err");
+		err_exit(E_MALLOC);
 	return (temp);
 }
 
@@ -53,7 +54,7 @@ void	*ft_calloc(size_t count, size_t size)
 		return ((void *)0);
 	returnptr = (unsigned char *)malloc(count * size);
 	if (!returnptr)
-		err_exit("Error\n : malloc err");
+		err_exit(E_MALLOC);
 	ft_memset((void *)returnptr, 0, count * size);
 	return ((void *)returnptr);
 }

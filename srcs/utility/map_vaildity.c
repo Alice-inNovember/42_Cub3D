@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:02:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 15:17:45 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:34:24 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	insert_map_obj(t_map_obj *map, char c, int x, int y)
 		map->player++;
 		map->c = c;
 		if (map->player > 1)
-			err_exit("a lot of players..\n");
+			err_exit(E_PLAYERCNT);
 		map->player_pos[0] = y;
 		map->player_pos[1] = x;
 	}

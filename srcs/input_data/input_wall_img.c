@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 16:38:48 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:33:42 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*get_wall_tex(char *path)
 
 	temp = ft_split(path, ' ');
 	if (arr_len(temp) != 2)
-		err_exit("Error\n : Map not valid");
+		err_exit(E_MAPVALID);
 	if (ft_strcmp(&temp[1][ft_strlen(temp[1]) - 4], ".xpm"))
-		err_exit("Error\n : .xpm img only");
+		err_exit(E_EXETENSION);
 	free(path);
 	path = ft_strdup(temp[1]);
 	free_arr(temp);

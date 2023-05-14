@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_player_move.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:18:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 23:39:42 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 20:39:40 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,18 @@ void	key_player_move(int keycode, t_data *data)
 {
 	if (keycode == KEY_UP || keycode == KEY_W)
 	{
-		write(1, "UP\n", 3);
 		up_down(data, 1, 1);
 	}
 	else if (keycode == KEY_DOWN || keycode == KEY_S)
 	{
-		write(1, "DOWN\n", 6);
 		up_down(data, -1, -1);
 	}
 	else if (keycode == KEY_D)
 	{
-		write(1, "RIGHT\n", 6);
 		left_right(data, 1, 1);
 	}
 	else if (keycode == KEY_A)
 	{
-		write(1, "LEFT\n", 5);
 		left_right(data, -1, -1);
 	}
 }

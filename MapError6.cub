@@ -2,9 +2,10 @@ F 82,82,82
 NO ./imgs/N_wall.xpm
 SO ./imgs/S_wall.xpm
 
-C 100,149,237
-WE ./imgs/W_wall.xpm
+
+WE ./imgs/E_wall.xpm
 EA ./imgs/E_wall.xpm
+
 
 111111111111111111111111
 100000000000000010000001

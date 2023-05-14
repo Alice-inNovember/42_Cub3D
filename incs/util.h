@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:48:17 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 17:43:48 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 19:28:11 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ int		ft_atoi(const char *str);
 int		arr_len(char **arr);
 void	free_arr(char **arr);
 int		ft_strcmp(char *s1, char *s2);
+
+char	**read_file(int idx, int fd);
 
 #endif

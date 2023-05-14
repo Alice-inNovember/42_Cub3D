@@ -6,11 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:08:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 17:43:24 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:35:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "../../libs/GNL/get_next_line.h"
+#include "../../incs/data.h"
+#include "../../incs/util.h"
 
 int	arr_len(char **arr)
 {
@@ -59,8 +62,29 @@ int	is_in_set(char c, char *set)
 	while (set[i])
 	{
 		if (c == set[i])
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
+}
+
+char	**read_file(int idx, int fd)
+{
+	char	*temp;
+	char	**input;
+
+	temp = get_next_line(fd);
+	if (temp == 0)
+	{
+		if (idx == 0)
+			return (0);
+		input = ft_malloc(sizeof(char *) * (idx + 1));
+		input[idx] = 0;
+		return (input);
+	}
+	input = read_file(idx + 1, fd);
+	if (!input)
+		err_exit(E_GNL);
+	input[idx] = temp;
+	return (input);
 }

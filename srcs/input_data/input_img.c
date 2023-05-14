@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 17:54:09 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 20:33:22 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ t_rgb	input_rgb(char *input, char op)
 	char	**rgb;
 
 	if (input[0] != op)
-		err_exit("Error\nInput is not vaild!");
+		err_exit(E_MAP_RGB);
 	tmp = ft_split(input, ' ');
 	if (arr_len(tmp) != 2)
-		err_exit("Error\nInput is not vaild!");
+		err_exit(E_MAP_RGB);
 	rgb = ft_split(tmp[1], ',');
 	if (arr_len(rgb) != 3)
-		err_exit("Error\nInput is not vaild!");
+		err_exit(E_MAP_RGB);
 	r_rgb = create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[1]), ft_atoi(rgb[2]));
 	free_arr(tmp);
 	free_arr(rgb);
