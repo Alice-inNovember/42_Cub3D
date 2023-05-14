@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_wall_img.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 17:02:52 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:22:02 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static void	temporary_function(t_input *input)
 	input->no_png = get_wall_tex(input->no_png);
 	input->so_png = get_wall_tex(input->so_png);
 	input->we_png = get_wall_tex(input->we_png);
-	// input->door_png = get_wall_tex(input->door_png);
 }
 
 void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)

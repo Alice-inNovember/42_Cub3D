@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   input_img.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 00:29:41 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:01:02 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/input_data.h"
 #include "../../incs/util.h"
 #include "../../incs/colors.h"
+#include <stdio.h>
 
 t_rgb	input_rgb(char *input, char op)
 {
+	t_rgb	r_rgb;
 	char	**tmp;
 	char	**rgb;
 
@@ -27,9 +29,11 @@ t_rgb	input_rgb(char *input, char op)
 	rgb = ft_split(tmp[1], ',');
 	if (arr_len(rgb) != 3)
 		err_exit("Error\nInput is not vaild!");
+	r_rgb = create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[1]), ft_atoi(rgb[2]));
 	free_arr(tmp);
 	free_arr(rgb);
-	return (create_trgb(0, ft_atoi(rgb[0]), ft_atoi(rgb[0]), ft_atoi(rgb[0])));
+	printf("=====|%s| : %x=====\n", input, r_rgb);
+	return (r_rgb);
 }
 
 void	input_img(t_input *input, t_texture *tex, t_libx *mlx)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:28:09 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 16:39:17 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:39:10 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	minimap(t_map *map_data, t_data *data)
 {
 	t_mini	*mini;
 
-	mini = malloc(sizeof(mini) * 1);
+	mini = malloc(sizeof(t_mini) * 1);
 	if (mini_insert(map_data, mini) == 1)
 		return (1);
 	if (mini_obj_insert(mini, map_data) == 1)

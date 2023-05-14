@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   renderer.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:54:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/13 17:10:08 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:03:21 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	renderer(t_data *data)
 {
 	if (key_event(data->control))
 		move_control(data);
-	draw_wall_img(data->texture->wall_img, data);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
 	data->texture->wall_img->img, 0, 0);
+	draw_wall_img(data->texture->wall_img, data);
 	mlx_put_image_to_window(data->libx->mlx, data->libx->mlx_win, \
 	(data->mini->mini_obj[(int)(data->player->pos_x / 10)] \
 	[(int)(data->player->pos_y / 10)]).img.img, 0, 0);

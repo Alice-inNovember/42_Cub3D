@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 19:27:55 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 16:22:28 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	**read_file(int idx, int fd)
 	{
 		if (idx == 0)
 			return (0);
-		input = ft_malloc(sizeof(char *) * idx + 1);
+		input = ft_malloc(sizeof(char *) * (idx + 1));
 		input[idx] = 0;
 		return (input);
 	}
@@ -57,6 +57,22 @@ void	parse_input(t_data *data, char	**inputstr, size_t i)
 		data->input->ceiling = ft_strdup(inputstr[i]);
 	else if (!is_set(inputstr[i], "\n 01NSEWM"))
 		err_exit("Error\n : Map not valid");
+}
+
+void	property_ck(t_data *data)
+{
+	if (data->input->no_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->so_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->we_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->ea_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->floor == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->ceiling == 0)
+		err_exit("Error\n : Map not valid, no path or data");
 }
 
 void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
@@ -100,7 +116,14 @@ void	init_input(t_data *data, char *input_file)
 	inputstr = read_file(0, file_fd);
 	if (inputstr == 0)
 		err_exit("Error\n : init_input");
+	data->input->no_png = 0;
+	data->input->so_png = 0;
+	data->input->ea_png = 0;
+	data->input->we_png = 0;
+	data->input->floor = 0;
+	data->input->ceiling = 0;
 	parse_map(data, inputstr, 0, 0);
+	property_ck(data);
 	i = 0;
 	while (inputstr[i])
 	{
