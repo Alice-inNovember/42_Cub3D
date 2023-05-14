@@ -1,180 +1,171 @@
-#NAME
-NAME			=	cub3D
-#CMDS
-CC				=	cc
-RM				=	rm -rf
-LIBC			=	ar rcs
-#FLAGS
-CFLAGS			=	-Wall -Wextra -Werror
-MLXFLAGS		=	-framework OpenGL -framework AppKit
-#DIRS	
-INCS_DIR		=	incs
-SRCS_DIR		=	srcs
-GM_PLAY_DIR		=	$(SRCS_DIR)/gameplay
-INITIAL_DIR		=	$(SRCS_DIR)/initial
-MINIMAP_DIR		=	$(SRCS_DIR)/minimap
-UTILITY_DIR		=	$(SRCS_DIR)/utility
-INPUTDATA_DIR	=	$(SRCS_DIR)/input_data
-DRAWWALLIMG_DIR	=	$(SRCS_DIR)/draw_wall_img
-OBJS_DIR		=	objs
-GM_PLAY_OBJ		=	$(OBJS_DIR)/gameplay
-INITIAL_OBJ		=	$(OBJS_DIR)/initial
-MINIMAP_OBJ		=	$(OBJS_DIR)/minimap
-UTILITY_OBJ		=	$(OBJS_DIR)/utility
-INPUTDATA_OBJ	=	$(OBJS_DIR)/input_data
-DRAWWALLIMG_OBJ	=	$(OBJS_DIR)/draw_wall_img
-LIBS_DIR		=	libs
-#FILES
-MAIN_SRCS		=	$(SRCS_DIR)/main.c \
-					$(GM_PLAY_DIR)/hook_box.c \
-					$(GM_PLAY_DIR)/key_player_move.c \
-					$(GM_PLAY_DIR)/key_player_rotate.c \
-					$(GM_PLAY_DIR)/mouse_set.c \
-					$(GM_PLAY_DIR)/renderer.c \
-					$(GM_PLAY_DIR)/key_door_control.c \
-					$(INITIAL_DIR)/init_event.c \
-					$(INITIAL_DIR)/init_input.c \
-					$(INITIAL_DIR)/init_libx.c \
-					$(INITIAL_DIR)/init_map.c \
-					$(INITIAL_DIR)/init_texture.c \
-					$(INITIAL_DIR)/init_player.c \
-					$(INITIAL_DIR)/init_screen.c \
-					$(INITIAL_DIR)/init_map_obj.c \
-					$(MINIMAP_DIR)/find_minimap.c \
-					$(MINIMAP_DIR)/mini_insert.c \
-					$(MINIMAP_DIR)/mini_obj_insert.c \
-					$(MINIMAP_DIR)/new_image_minimap.c \
-					$(MINIMAP_DIR)/new_image_case.c \
-					$(MINIMAP_DIR)/minimap.c \
-					$(MINIMAP_DIR)/make_mini_player.c \
-					$(UTILITY_DIR)/colors.c\
-					$(UTILITY_DIR)/map_vaildity.c \
-					$(UTILITY_DIR)/util1.c \
-					$(UTILITY_DIR)/util2.c \
-					$(UTILITY_DIR)/util3.c \
-					$(UTILITY_DIR)/util4.c \
-					$(UTILITY_DIR)/test.c \
-					$(INPUTDATA_DIR)/input_data.c \
-					$(INPUTDATA_DIR)/input_img.c \
-					$(INPUTDATA_DIR)/input_player.c \
-					$(INPUTDATA_DIR)/input_wall_img.c \
-					$(INPUTDATA_DIR)/make_img_box.c \
-					$(DRAWWALLIMG_DIR)/draw_img_init.c \
-					$(DRAWWALLIMG_DIR)/draw_background.c \
-					$(DRAWWALLIMG_DIR)/draw_other_img_calc.c \
-					$(DRAWWALLIMG_DIR)/draw_other_img_raycating.c \
-					$(DRAWWALLIMG_DIR)/draw_wall_img.c \
-					$(DRAWWALLIMG_DIR)/drawing_img.c \
-					$(DRAWWALLIMG_DIR)/pixel_inout.c
-MAIN_OBJ		=	$(MAIN_SRCS:.c=.o)
-OBJS			=	$(subst $(SRCS_DIR), $(OBJS_DIR), $(MAIN_OBJ))
-LIBGNL			=	$(LIBS_DIR)/GNL/LIBGNL.a
-LIBMLX			=	$(LIBS_DIR)/MLX/libmlx.dylib
-#COLOR
-Color_Off	=	"\033[0m"
-LRed		=	"\033[1;31m"
-LGreen		=	"\033[1;32m"
-LBlue		=	"\033[1;34m"
-LPurple		=	"\033[1;35m"
-LCyan		=	"\033[1;36m"
-INFO		=
+#NAME------------------------------------------------------
+NAME				=	cub3D
+#CMDS------------------------------------------------------
+CC					=	cc
+RM					=	rm -rf
+LIBC				=	ar rcs
+#FLAGS-----------------------------------------------------
+CFLAGS				=	-Wall -Wextra -Werror
+MLXFLAGS			=	-framework OpenGL -framework AppKit
+#DIRS------------------------------------------------------
+D_LIBS			=	libs
+D_INCS			=	incs
+D_SRCS			=	srcs
+D_OBJS			=	objs
 
+SD_GM_PLAY		=	$(D_SRCS)/gameplay
+SD_INITIAL		=	$(D_SRCS)/initial
+SD_MINIMAP		=	$(D_SRCS)/minimap
+SD_UTILITY		=	$(D_SRCS)/utility
+SD_INPUTDATA	=	$(D_SRCS)/input_data
+SD_DRAWWALLIMG	=	$(D_SRCS)/draw_wall_img
+
+
+OD_GM_PLAY		=	$(D_OBJS)/gameplay
+OD_INITIAL		=	$(D_OBJS)/initial
+OD_MINIMAP		=	$(D_OBJS)/minimap
+OD_UTILITY		=	$(D_OBJS)/utility
+OD_INPUTDATA	=	$(D_OBJS)/input_data
+OD_DRAWWALLIMG	=	$(D_OBJS)/draw_wall_img
+#FILES-----------------------------------------------------
+SRCS			=	$(D_SRCS)/main.c \
+					$(SD_GM_PLAY)/hook_box.c \
+					$(SD_GM_PLAY)/key_player_move.c \
+					$(SD_GM_PLAY)/key_player_rotate.c \
+					$(SD_GM_PLAY)/mouse_set.c \
+					$(SD_GM_PLAY)/renderer.c \
+					$(SD_GM_PLAY)/key_door_control.c \
+					$(SD_INITIAL)/init_event.c \
+					$(SD_INITIAL)/init_input.c \
+					$(SD_INITIAL)/init_libx.c \
+					$(SD_INITIAL)/init_map.c \
+					$(SD_INITIAL)/init_texture.c \
+					$(SD_INITIAL)/init_player.c \
+					$(SD_INITIAL)/init_screen.c \
+					$(SD_INITIAL)/init_map_obj.c \
+					$(SD_MINIMAP)/find_minimap.c \
+					$(SD_MINIMAP)/mini_insert.c \
+					$(SD_MINIMAP)/mini_obj_insert.c \
+					$(SD_MINIMAP)/new_image_minimap.c \
+					$(SD_MINIMAP)/new_image_case.c \
+					$(SD_MINIMAP)/minimap.c \
+					$(SD_MINIMAP)/make_mini_player.c \
+					$(SD_UTILITY)/colors.c\
+					$(SD_UTILITY)/map_vaildity.c \
+					$(SD_UTILITY)/util1.c \
+					$(SD_UTILITY)/util2.c \
+					$(SD_UTILITY)/util3.c \
+					$(SD_UTILITY)/util4.c \
+					$(SD_UTILITY)/test.c \
+					$(SD_INPUTDATA)/input_data.c \
+					$(SD_INPUTDATA)/input_img.c \
+					$(SD_INPUTDATA)/input_player.c \
+					$(SD_INPUTDATA)/input_wall_img.c \
+					$(SD_INPUTDATA)/make_img_box.c \
+					$(SD_DRAWWALLIMG)/draw_img_init.c \
+					$(SD_DRAWWALLIMG)/draw_background.c \
+					$(SD_DRAWWALLIMG)/draw_other_img_calc.c \
+					$(SD_DRAWWALLIMG)/draw_other_img_raycating.c \
+					$(SD_DRAWWALLIMG)/draw_wall_img.c \
+					$(SD_DRAWWALLIMG)/drawing_img.c \
+					$(SD_DRAWWALLIMG)/pixel_inout.c
+OBJS			=	$(subst $(D_SRCS), $(D_OBJS), $(SRCS:.c=.o))
+LIBGNL			=	$(D_LIBS)/GNL/LIBGNL.a
+LIBMLX			=	$(D_LIBS)/MLX/libmlx.dylib
+#COLOR-----------------------------------------------------
+C_OFF			=	"\033[0m"
+C_RED			=	"\033[1;31m"
+C_GRN			=	"\033[1;32m"
+C_BLE			=	"\033[1;34m"
+C_PLE			=	"\033[1;35m"
+C_CYN			=	"\033[1;36m"
+INFO			=
+#PRINTER---------------------------------------------------
+define P_STAT
+	$(eval INFO = $(shell echo $(1)$(C_OFF)))
+	$(info $(INFO))
+endef
+#KEY-------------------------------------------------------
 all : $(NAME)
 
 mlx :
-	@$(MAKE) -C $(LIBS_DIR)/MLX
-
+	@$(MAKE) -C $(D_LIBS)/MLX
+	$(call P_STAT,$(C_BLE)MLX processing...)
+#NAME------------------------------------------------------
 $(NAME) : $(OBJS)
-	$(eval INFO = $(shell echo $(LBlue)Compiling$(Color_Off)))
-	$(info $(INFO))
-	@$(MAKE) -C $(LIBS_DIR)/GNL
-	$(eval INFO = $(shell echo $(LCyan)libgnl.a "  "✅$(Color_Off)))
-	$(info $(INFO))
-	@$(MAKE) -C $(LIBS_DIR)/MLX
-	$(eval INFO = $(shell echo $(LCyan)mlx.dylib " "✅$(Color_Off)))
-	$(info $(INFO))
-	@$(CC) $(CFLAGS) -o $@ $^ $(LIBGNL) $(MLXFLAGS) -L$(LIBS_DIR)/MLX -lmlx
+	$(call P_STAT,$(C_BLE)Compiling)
+
+	@$(MAKE) -C $(D_LIBS)/GNL --silent
+	$(call P_STAT,$(C_CYN)libgnl.a"     "✅)
+	@$(MAKE) -C $(D_LIBS)/MLX --silent
+	$(call P_STAT,$(C_CYN)mlx.dylib"    "✅)
+
+	@$(CC) $(CFLAGS) -o $@ $^ $(LIBGNL) $(MLXFLAGS) -L$(D_LIBS)/MLX -lmlx
 	@-install_name_tool -change libmlx.dylib ./$(LIBMLX) $(NAME)
-	$(eval INFO = $(shell echo $(LPurple)cub3D "     "✅$(Color_Off)))
-	$(info $(INFO))
-	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
-	$(info $(INFO))
+	$(call P_STAT,$(C_PLE)cub3D"        "✅)
+
+	$(call P_STAT,$(C_GRN)Done!)
 	$(info )
-	$(eval INFO = $(shell echo $(LBlue)MLX processing...$(Color_Off)))
-	$(info $(INFO))
+	$(call P_STAT,$(C_BLE)MLX processing...)
+#OBJS------------------------------------------------------
+$(D_OBJS)/%.o : $(D_SRCS)/%.c | $(D_OBJS)
+	@$(CC) $(CFLAGS) -c $< -o $@ 
+$(OD_DATA)/%.o : $(SD_DATA)/%.c | $(OD_DATA)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(OD_PLAYER)/%.o : $(SD_PLAYER)/%.c | $(OD_PLAYER)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(OD_RENDER)/%.o : $(SD_RENDER)/%.c | $(OD_RENDER)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(OD_UTILITY)/%.o : $(SD_UTILITY)/%.c | $(OD_UTILITY)
+	@$(CC) $(CFLAGS) -c $< -o $@
+#MKDIR-----------------------------------------------------
+$(D_OBJS):
+	$(call P_STAT,$(C_BLE)Create DIR)
 
-$(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(GM_PLAY_OBJ)/%.o : $(GM_PLAY_DIR)/%.c | $(GM_PLAY_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(INITIAL_OBJ)/%.o : $(INITIAL_DIR)/%.c | $(INITIAL_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(MINIMAP_OBJ)/%.o : $(MINIMAP_DIR)/%.c | $(MINIMAP_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(UTILITY_OBJ)/%.o : $(UTILITY_DIR)/%.c | $(UTILITY_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(INPUTDATA_OBJ)/%.o : $(INPUTDATA_DIR)/%.c | $(INPUTDATA_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
-$(DRAWWALLIMG_OBJ)/%.o : $(DRAWWALLIMG_DIR)/%.c | $(DRAWWALLIMG_OBJ)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@mkdir -p $(D_OBJS)
+	$(call P_STAT,$(C_CYN)D_OBJS"       "✅)
 
-$(OBJS_DIR):
-	$(eval INFO = $(shell echo $(LBlue)Create DIR$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(OBJS_DIR)
-	$(eval INFO = $(shell echo $(LCyan)srcs "      "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(GM_PLAY_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)gameplay "  "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(INITIAL_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)initial "   "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(MINIMAP_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)minimap "   "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(UTILITY_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)utility "   "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(INPUTDATA_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)input_data "   "✅$(Color_Off)))
-	$(info $(INFO))
-	@mkdir -p $(DRAWWALLIMG_OBJ)
-	$(eval INFO = $(shell echo $(LCyan)draw_wall_img "   "✅$(Color_Off)))
-	$(info $(INFO))
-	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
-	$(info $(INFO))
+	@mkdir -p $(OD_DATA)
+	$(call P_STAT,$(C_CYN)OD_DATA"      "✅)
+
+	@mkdir -p $(OD_PLAYER)
+	$(call P_STAT,$(C_CYN)OD_PLAYER"    "✅)
+
+	@mkdir -p $(OD_RENDER)
+	$(call P_STAT,$(C_CYN)OD_RENDER"    "✅)
+
+	@mkdir -p $(OD_UTILITY)
+	$(call P_STAT,$(C_CYN)OD_UTILITY"   "✅)
+
+	$(call P_STAT,$(C_GRN)Done!)
 	$(info )
-
+#CLEAN-----------------------------------------------------
 clean :
-	$(eval INFO = $(shell echo $(LRed)Cleaning$(Color_Off)))
-	$(info $(INFO))
-	@$(MAKE) -C $(LIBS_DIR)/GNL fclean
-	$(eval INFO = $(shell echo $(LCyan)libgnl "    "✅$(Color_Off)))
-	$(info $(INFO))
-	@$(MAKE) -C $(LIBS_DIR)/MLX fclean
-	$(eval INFO = $(shell echo $(LCyan)libmlx "    "✅$(Color_Off)))
-	$(info $(INFO))
-	@$(RM) $(OBJS_DIR)
-	$(eval INFO = $(shell echo $(LCyan)ObjDir "    "✅$(Color_Off)))
-	$(info $(INFO))
-	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
-	$(info $(INFO))
-	$(info )
+	$(call P_STAT,$(C_RED)Cleaning)
+	
+	@$(MAKE) -C $(D_LIBS)/GNL fclean
+	$(call P_STAT,$(C_CYN)libgnl"       "✅)
 
+	@$(MAKE) -C $(D_LIBS)/MLX fclean
+	$(call P_STAT,$(C_CYN)libmlx"       "✅)
+
+	@$(RM) $(D_OBJS)
+	$(call P_STAT,$(C_CYN)ObjDir"       "✅)
+
+	$(call P_STAT,$(C_GRN)Done!)
+	$(info )
+#FCLEAN----------------------------------------------------
 fclean : clean
-	$(eval INFO = $(shell echo $(LRed)Removing$(Color_Off)))
-	$(info $(INFO))
-	@$(RM) $(NAME)
-	$(eval INFO = $(shell echo $(LPurple)cub3D "     "✅$(Color_Off)))
-	$(info $(INFO))
-	$(eval INFO = $(shell echo $(LGreen)Done!$(Color_Off)))
-	$(info $(INFO))
-	$(info )
+	$(call P_STAT,$(C_RED)Removing)
 
+	@$(RM) $(NAME)
+	$(call P_STAT,$(C_PLE)cub3D"        "✅)
+
+	$(call P_STAT,$(C_GRN)Done!)
+	$(info )
+#RE--------------------------------------------------------
 re :
 	@$(MAKE) fclean
 	@$(MAKE) all
-
 
 .PHONY : all clean fclean re

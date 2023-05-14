@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 16:22:28 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/14 16:36:34 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,6 @@ void	parse_input(t_data *data, char	**inputstr, size_t i)
 		err_exit("Error\n : Map not valid");
 }
 
-void	property_ck(t_data *data)
-{
-	if (data->input->no_png == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-	if (data->input->so_png == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-	if (data->input->we_png == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-	if (data->input->ea_png == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-	if (data->input->floor == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-	if (data->input->ceiling == 0)
-		err_exit("Error\n : Map not valid, no path or data");
-}
-
 void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
 {
 	while (inputstr[i])
@@ -104,18 +88,8 @@ void	parse_map(t_data *data, char **inputstr, size_t i, size_t cnt)
 	data->input->map[cnt] = ft_strdup(inputstr[i]);
 }
 
-void	init_input(t_data *data, char *input_file)
+void	property_ck(t_data *data, char **inputstr)
 {
-	int		file_fd;
-	char	**inputstr;
-	size_t	i;
-
-	file_fd = open(input_file, O_RDONLY);
-	if (file_fd <= 2)
-		err_exit("Error\n : File open faild");
-	inputstr = read_file(0, file_fd);
-	if (inputstr == 0)
-		err_exit("Error\n : init_input");
 	data->input->no_png = 0;
 	data->input->so_png = 0;
 	data->input->ea_png = 0;
@@ -123,7 +97,35 @@ void	init_input(t_data *data, char *input_file)
 	data->input->floor = 0;
 	data->input->ceiling = 0;
 	parse_map(data, inputstr, 0, 0);
-	property_ck(data);
+	if (data->input->no_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->so_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->we_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->ea_png == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->floor == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+	if (data->input->ceiling == 0)
+		err_exit("Error\n : Map not valid, no path or data");
+}
+
+void	init_input(t_data *data, char *input_file)
+{
+	int		file_fd;
+	char	**inputstr;
+	size_t	i;
+
+	if (ft_strcmp(&input_file[ft_strlen(input_file) - 4], ".cub"))
+		err_exit("Error\n : .cub map only");
+	file_fd = open(input_file, O_RDONLY);
+	if (file_fd <= 2)
+		err_exit("Error\n : File open faild");
+	inputstr = read_file(0, file_fd);
+	if (inputstr == 0)
+		err_exit("Error\n : init_input");
+	property_ck(data, inputstr);
 	i = 0;
 	while (inputstr[i])
 	{
