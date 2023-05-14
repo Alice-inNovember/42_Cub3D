@@ -6,7 +6,7 @@
 /*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 00:31:39 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/14 18:35:52 by sounchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	mouse_speed_control(int keycode, t_data *data);
 
 // key_door_contrl.c
 void	door_open_cloce(t_data *data);
-void	control_door(char **map, int x, int y);
+void	control_door(char **map, double x, double y, int cas);
+void	put_number(int *i_x, int *i_y, int cas);
+int		cas_test(int num, double f_num, int cas);
 
 #endif
