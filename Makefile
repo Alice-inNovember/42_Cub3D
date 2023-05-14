@@ -110,13 +110,17 @@ $(NAME) : $(OBJS)
 #OBJS------------------------------------------------------
 $(D_OBJS)/%.o : $(D_SRCS)/%.c | $(D_OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@ 
-$(OD_DATA)/%.o : $(SD_DATA)/%.c | $(OD_DATA)
+$(OD_GM_PLAY)/%.o : $(SD_GM_PLAY)/%.c | $(OD_GM_PLAY)
 	@$(CC) $(CFLAGS) -c $< -o $@
-$(OD_PLAYER)/%.o : $(SD_PLAYER)/%.c | $(OD_PLAYER)
+$(OD_INITIAL)/%.o : $(SD_INITIAL)/%.c | $(OD_INITIAL)
 	@$(CC) $(CFLAGS) -c $< -o $@
-$(OD_RENDER)/%.o : $(SD_RENDER)/%.c | $(OD_RENDER)
+$(OD_MINIMAP)/%.o : $(SD_MINIMAP)/%.c | $(OD_MINIMAP)
 	@$(CC) $(CFLAGS) -c $< -o $@
 $(OD_UTILITY)/%.o : $(SD_UTILITY)/%.c | $(OD_UTILITY)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(OD_INPUTDATA)/%.o : $(SD_INPUTDATA)/%.c | $(OD_INPUTDATA)
+	@$(CC) $(CFLAGS) -c $< -o $@
+$(OD_DRAWWALLIMG)/%.o : $(SD_DRAWWALLIMG)/%.c | $(OD_DRAWWALLIMG)
 	@$(CC) $(CFLAGS) -c $< -o $@
 #MKDIR-----------------------------------------------------
 $(D_OBJS):
@@ -125,17 +129,23 @@ $(D_OBJS):
 	@mkdir -p $(D_OBJS)
 	$(call P_STAT,$(C_CYN)D_OBJS"       "✅)
 
-	@mkdir -p $(OD_DATA)
-	$(call P_STAT,$(C_CYN)OD_DATA"      "✅)
+	@mkdir -p $(OD_GM_PLAY)
+	$(call P_STAT,$(C_CYN)OD_GM_PLAY"   "✅)
 
-	@mkdir -p $(OD_PLAYER)
-	$(call P_STAT,$(C_CYN)OD_PLAYER"    "✅)
+	@mkdir -p $(OD_INITIAL)
+	$(call P_STAT,$(C_CYN)OD_INITIAL"   "✅)
 
-	@mkdir -p $(OD_RENDER)
-	$(call P_STAT,$(C_CYN)OD_RENDER"    "✅)
+	@mkdir -p $(OD_MINIMAP)
+	$(call P_STAT,$(C_CYN)OD_MINIMAP"   "✅)
 
 	@mkdir -p $(OD_UTILITY)
 	$(call P_STAT,$(C_CYN)OD_UTILITY"   "✅)
+
+	@mkdir -p $(OD_INPUTDATA)
+	$(call P_STAT,$(C_CYN)OD_IN_DATA"   "✅)
+
+	@mkdir -p $(OD_DRAWWALLIMG)
+	$(call P_STAT,$(C_CYN)OD_WALLIMG"   "✅)
 
 	$(call P_STAT,$(C_GRN)Done!)
 	$(info )
