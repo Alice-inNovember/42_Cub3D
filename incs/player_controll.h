@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_controll.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 18:35:52 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/15 11:49:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ void	door_open_cloce(t_data *data);
 void	control_door(char **map, double x, double y, int cas);
 void	put_number(int *i_x, int *i_y, int cas);
 int		cas_test(int num, double f_num, int cas);
+
+void	backstep(t_data *data);
 
 #endif

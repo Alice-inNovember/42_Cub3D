@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:18:34 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 21:26:20 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 12:31:27 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	up_down(t_data *data, int x, int y)
 		if (move_detail(data->map->map, pos_x, delta_y, 1) == 1)
 			data->player->pos_y = delta_y;
 	}
+	backstep(data);
 }
 
 int	move_detail(char **map, double x, double y, int cas)
@@ -108,19 +109,19 @@ int	move_detail(char **map, double x, double y, int cas)
 	if (cas == 1)
 	{
 		if ((\
-		map[(int)(x)][(int)(y)] != '1' && \
-		map[(int)(x)][(int)(y)] != '1') && (\
-		map[(int)(x)][(int)(y)] != 'M' && \
-		map[(int)(x)][(int)(y)] != 'M'))
+		map[(int)(x)][(int)(y + 0.15)] != '1' && \
+		map[(int)(x)][(int)(y - 0.15)] != '1') && (\
+		map[(int)(x)][(int)(y + 0.15)] != 'M' && \
+		map[(int)(x)][(int)(y - 0.15)] != 'M'))
 			return (1);
 	}
 	else
 	{
 		if ((\
-		map[(int)(x)][(int)(y)] != '1' && \
-		map[(int)(x)][(int)(y)] != '1') && (\
-		map[(int)(x)][(int)(y)] != 'M' && \
-		map[(int)(x)][(int)(y)] != 'M'))
+		map[(int)(x + 0.15)][(int)(y)] != '1' && \
+		map[(int)(x - 0.15)][(int)(y)] != '1') && (\
+		map[(int)(x + 0.15)][(int)(y)] != 'M' && \
+		map[(int)(x - 0.15)][(int)(y)] != 'M'))
 			return (1);
 	}
 	return (0);

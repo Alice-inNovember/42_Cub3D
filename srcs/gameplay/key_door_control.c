@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_door_control.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:58:23 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 18:50:48 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/15 12:30:33 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,14 @@ void	put_number(int *i_x, int *i_y, int cas)
 
 int	cas_test(int num, double f_num, int cas)
 {
-	printf("%d %f\n", num, f_num);
 	if (cas == 0 || cas == 3)
 	{
-		if (num == (int)(f_num - 0.1))
+		if (num == (int)(f_num - 0.15))
 			return (0);
 	}
 	else
 	{
-		if (num == (int)(f_num + 0.1))
+		if (num == (int)(f_num + 0.15))
 			return (0);
 	}
 	return (1);

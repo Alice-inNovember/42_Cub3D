@@ -5,7 +5,7 @@ CC					=	cc
 RM					=	rm -rf
 LIBC				=	ar rcs
 #FLAGS-----------------------------------------------------
-CFLAGS				=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS				=	-Wall -Wextra -Werror
 MLXFLAGS			=	-framework OpenGL -framework AppKit
 #DIRS------------------------------------------------------
 D_LIBS			=	libs
@@ -31,6 +31,7 @@ OD_DRAWWALLIMG	=	$(D_OBJS)/draw_wall_img
 SRCS			=	$(D_SRCS)/main.c \
 					$(SD_GM_PLAY)/hook_box.c \
 					$(SD_GM_PLAY)/key_player_move.c \
+					$(SD_GM_PLAY)/player_backstep.c \
 					$(SD_GM_PLAY)/key_player_rotate.c \
 					$(SD_GM_PLAY)/mouse_set.c \
 					$(SD_GM_PLAY)/renderer.c \
@@ -85,10 +86,6 @@ define P_STAT
 endef
 #KEY-------------------------------------------------------
 all : $(NAME)
-
-mlx :
-	@$(MAKE) -C $(D_LIBS)/MLX
-	$(call P_STAT,$(C_BLE)MLX processing...)
 #NAME------------------------------------------------------
 $(NAME) : $(OBJS)
 	$(call P_STAT,$(C_BLE)Compiling)
@@ -151,10 +148,10 @@ $(D_OBJS):
 clean :
 	$(call P_STAT,$(C_RED)Cleaning)
 	
-	@$(MAKE) -C $(D_LIBS)/GNL fclean
+	@$(MAKE) -C $(D_LIBS)/GNL fclean --silent
 	$(call P_STAT,$(C_CYN)libgnl"       "✅)
 
-	@$(MAKE) -C $(D_LIBS)/MLX fclean
+	@$(MAKE) -C $(D_LIBS)/MLX fclean --silent
 	$(call P_STAT,$(C_CYN)libmlx"       "✅)
 
 	@$(RM) $(D_OBJS)
@@ -173,7 +170,7 @@ fclean : clean
 	$(info )
 #RE--------------------------------------------------------
 re :
-	@$(MAKE) fclean
-	@$(MAKE) all
+	@$(MAKE) fclean --silent
+	@$(MAKE) all --silent
 
 .PHONY : all clean fclean re
