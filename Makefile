@@ -13,10 +13,11 @@ $(BNAME) :
 
 clean :
 	@$(MAKE) clean -C Vanilla
-
-fclean : clean
-	@$(MAKE) clean -C Vanilla
 	@$(MAKE) clean -C Bonus
+
+fclean :
+	@$(MAKE) fclean -C Vanilla
+	@$(MAKE) fclean -C Bonus
 	@rm -rf cub3D
 
 re :
