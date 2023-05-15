@@ -6,11 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:26:52 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:11:19 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/minimap_bonus.h"
+#include "../../incs/util_bonus.h"
 
 int	mini_insert(t_map *map_data, t_mini *mini)
 {
@@ -46,13 +47,13 @@ int	mini_obj_malloc(t_mini *mini)
 
 	i = 0;
 	mini->mini_obj = \
-	(t_mini_obj **)malloc(sizeof(t_mini_obj *) * mini->parti_y);
+	(t_mini_obj **)ft_malloc(sizeof(t_mini_obj *) * mini->parti_y);
 	if (mini->mini_obj == NULL)
 		return (1);
 	while (i < mini->parti_y)
 	{
 		mini->mini_obj[i] = \
-		(t_mini_obj *)malloc(sizeof(t_mini_obj) * mini->parti_x);
+		(t_mini_obj *)ft_malloc(sizeof(t_mini_obj) * mini->parti_x);
 		if (mini->mini_obj[i] == NULL)
 		{
 			mini_obj_free(mini, i);

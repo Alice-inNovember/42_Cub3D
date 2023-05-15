@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 20:41:33 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:12:58 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@
 # define E_MAP_RGB		"Error\nRGB Input Not Valid"
 # define E_MALLOC		"Error\nMalloc Err"
 # define E_GNL			"Error\nMalloc Err"
+# define E_MLXTEX		"Error\nTexture Err"
 
 //------------------------------
 

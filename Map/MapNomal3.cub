@@ -3,12 +3,12 @@ NO ./imgs/N.xpm
 SO ./imgs/S.xpm
 
 C 184,231,225
-WE ./imgs/w.xpm
+WE ./imgs/W.xpm
 EA ./imgs/E.xpm
 
 
  1111111111
- 1M0000MN01
+ 1M0000MW01
  11M1001001
  1000000001
  1111111111

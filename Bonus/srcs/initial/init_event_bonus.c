@@ -6,11 +6,10 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 14:33:40 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:10:22 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:59:27 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "../../libs/MLX/mlx.h"

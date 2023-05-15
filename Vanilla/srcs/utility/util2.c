@@ -6,12 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:22:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:37:23 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
+#include "../../incs/util.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -30,7 +31,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	strl = ft_strlen(s1);
-	returnptr = (char *)malloc(strl + 1);
+	returnptr = (char *)ft_malloc(strl + 1);
 	if (!returnptr)
 		return (0);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:16:52 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ void	tran_mlx_img(t_input *input, t_texture *tex, t_libx *mlx)
 	mlx_xpm_file_to_image(mlx->mlx, input->we_png, &wid, &hei);
 	tex->door->img = \
 	mlx_xpm_file_to_image(mlx->mlx, "./imgs/door.xpm", &wid, &hei);
+	if (\
+	!tex->wall_n->img || \
+	!tex->wall_s->img || \
+	!tex->wall_e->img || \
+	!tex->wall_w->img || \
+	!tex->door->img
+	)
+		err_exit(E_MLXTEX);
 }
 
 void	make_t_images(t_texture *tex)

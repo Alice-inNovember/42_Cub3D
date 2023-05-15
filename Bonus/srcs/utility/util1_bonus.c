@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:15:04 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	*ft_calloc(size_t count, size_t size)
 	test = count * size;
 	if (size != 0 && (test / size != count))
 		return ((void *)0);
-	returnptr = (unsigned char *)malloc(count * size);
+	returnptr = (unsigned char *)ft_malloc(count * size);
 	if (!returnptr)
 		err_exit(E_MALLOC);
 	ft_memset((void *)returnptr, 0, count * size);

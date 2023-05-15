@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:21:11 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:34:39 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	parse_data(t_data *data, char **inputstr, int i, int maplen)
 		i--;
 	}
 	i++;
-	data->input->map = malloc(sizeof(char *) * (maplen + 1));
+	data->input->map = ft_malloc(sizeof(char *) * (maplen + 1));
 	data->input->map[maplen] = 0;
 	maplen = 0;
 	while (inputstr[i])

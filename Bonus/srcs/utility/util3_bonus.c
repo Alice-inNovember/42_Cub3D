@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util3.c                                            :+:      :+:    :+:   */
+/*   util3_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/12 15:03:33 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "../../incs/util_bonus.h"
 
 static int	ft_issame(char a, char b)
 {
@@ -41,7 +42,7 @@ static int	str_malloc(char **returnarr, char *str, char c, int count)
 	strsize = 0;
 	while (!ft_issame(str[strsize], c) && str[strsize])
 		strsize++;
-	returnarr[count] = (char *)malloc(sizeof(char) * (strsize + 1));
+	returnarr[count] = (char *)ft_malloc(sizeof(char) * (strsize + 1));
 	if (!returnarr[count])
 	{
 		ft_freearr(returnarr);
@@ -101,7 +102,7 @@ char	**ft_split(char const *s, char c)
 				i++;
 		}
 	}
-	returnarr = (char **)malloc(sizeof(char *) * (wcount + 1));
+	returnarr = (char **)ft_malloc(sizeof(char *) * (wcount + 1));
 	if (!returnarr)
 		return (returnarr);
 	word_malloc(returnarr, (char *)s, c);

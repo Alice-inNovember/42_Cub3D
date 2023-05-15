@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:08 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:11:03 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	input_dir_plane(int x, t_player *player)
 	}
 	else if (x == 'W')
 	{
-		player->dir_y = 1.0;
-		player->plane_x = 0.66;
+		player->dir_y = -1.0;
+		player->plane_x = -0.66;
 	}
 	else if (x == 'E')
 	{
-		player->dir_y = -1.0;
-		player->plane_x = -0.66;
+		player->dir_y = 1.0;
+		player->plane_x = 0.66;
 	}
 	player->pos_y += 0.5;
 	player->pos_x += 0.5;
