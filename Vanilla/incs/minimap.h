@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sounchoi <sounchoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nemesis03_mac <nemesis03_mac@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:41:49 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/14 00:32:25 by sounchoi         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:00:43 by nemesis03_m      ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		mini_obj_insert(t_mini *mini, t_map *map_data);
 int		mini_obj_init(t_mini *mini);
 int		mini_obj_map_malloc(t_mini_obj *mini_obj);
 void	mini_obj_map_insert(t_mini_obj **mini_obj, \
-		t_map *map_data, t_mini *mini);
+		t_map *map_data);
 
 // find_imagemap.c
 void	find_minimap(t_mini *mini);

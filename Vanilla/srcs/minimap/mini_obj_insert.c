@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_obj_insert.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: nemesis03_mac <nemesis03_mac@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:26:59 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:35:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/16 13:00:52 by nemesis03_m      ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	mini_obj_insert(t_mini *mini, t_map *map_data)
 {
 	if (mini_obj_init(mini) == 1)
 		return (1);
-	mini_obj_map_insert(mini->mini_obj, map_data, mini);
+	mini_obj_map_insert(mini->mini_obj, map_data);
 	return (0);
 }
 
@@ -73,14 +73,12 @@ int	mini_obj_map_malloc(t_mini_obj *mini_obj)
 }
 
 void	mini_obj_map_insert(t_mini_obj **mini_obj, \
-t_map *map_data, t_mini *mini)
+t_map *map_data)
 {
 	int	i;
 	int	j;
-	int	max;
 
 	i = 0;
-	max = mini->parti_x * 10;
 	while (i < map_data->ysize)
 	{
 		j = 0;
