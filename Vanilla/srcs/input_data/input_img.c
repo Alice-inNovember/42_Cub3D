@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 13:21:32 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/19 17:26:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ t_rgb	input_rgb(char *input, char op)
 	char	**tmp;
 	char	**rgb;
 
+	if (input == 0)
+		err_exit(E_MAP_RGB);
 	if (input[0] != op)
 		err_exit(E_MAP_RGB);
 	tmp = ft_split(input, ' ');
