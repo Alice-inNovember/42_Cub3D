@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:24:15 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 10:02:17 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*get_wall_tex(char *path)
 {
 	char	**temp;
 
+	if (!path)
+		err_exit(E_MLXTEX);
 	temp = ft_split(path, ' ');
 	if (arr_len(temp) != 2)
 		err_exit(E_MAPVALID);

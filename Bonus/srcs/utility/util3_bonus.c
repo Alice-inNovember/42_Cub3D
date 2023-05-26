@@ -6,12 +6,13 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 10:03:17 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../../incs/util_bonus.h"
+#include "../../incs/data_bonus.h"
 
 static int	ft_issame(char a, char b)
 {
@@ -89,6 +90,8 @@ char	**ft_split(char const *s, char c)
 	int		wcount;
 	int		i;
 
+	if (s == 0)
+		err_exit(E_MALLOC);
 	i = 0;
 	wcount = 0;
 	while (s[i])

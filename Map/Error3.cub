@@ -1,0 +1,14 @@
+F 103,93,80
+C 184,231,225
+
+NO ./imgs/N00000000000.xpm
+SO ./imgs/S.xpm
+WE ./imgs/W.xpm
+EA ./imgs/E.xpm
+
+
+11111
+10001
+10001
+100N1
+11111

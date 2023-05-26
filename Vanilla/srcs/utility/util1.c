@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:38:43 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 10:03:52 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	*ft_malloc(size_t size)
 {
 	void	*temp;
 
+	if (size == 0)
+		err_exit(E_MALLOC);
 	temp = malloc(size);
 	if (!temp)
 		err_exit(E_MALLOC);
