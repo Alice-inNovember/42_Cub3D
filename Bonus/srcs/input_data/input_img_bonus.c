@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/26 17:07:00 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 17:12:35 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "../../incs/util_bonus.h"
 #include "../../incs/colors_bonus.h"
 
-int		cntcoma(char *str)
+int	cntcoma(char *str)
 {
-	int i;
-	int cnt;
+	int	i;
+	int	cnt;
 
 	i = 0;
 	cnt = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == ',')
 			cnt++;
