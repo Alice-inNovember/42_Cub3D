@@ -6,13 +6,29 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:23:58 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/19 17:26:30 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 17:07:37 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/input_data.h"
 #include "../../incs/util.h"
 #include "../../incs/colors.h"
+
+int		cntcoma(char *str)
+{
+	int i;
+	int cnt;
+
+	i = 0;
+	cnt = 0;
+	while(str[i])
+	{
+		if (str[i] == ',')
+			cnt++;
+		i++;
+	}
+	return (cnt);
+}
 
 t_rgb	input_rgb(char *input, char op)
 {
@@ -26,6 +42,8 @@ t_rgb	input_rgb(char *input, char op)
 		err_exit(E_MAP_RGB);
 	tmp = ft_split(input, ' ');
 	if (arr_len(tmp) != 2)
+		err_exit(E_MAP_RGB);
+	if (cntcoma(tmp[1]) != 3)
 		err_exit(E_MAP_RGB);
 	rgb = ft_split(tmp[1], ',');
 	if (arr_len(rgb) != 3)

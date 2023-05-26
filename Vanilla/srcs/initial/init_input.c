@@ -6,11 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 16:00:07 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:34:39 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 15:22:30 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
@@ -30,13 +31,15 @@ void	put_tex(char **adr, char *str)
 
 int	is_tex(t_data *data, char *str)
 {
-	if (str[0] == 'N' && str[1] == 'O')
+	if (strlen(str) < 3)
+		return (1);
+	if (str[0] == 'N' && str[1] == 'O' && str[2] == ' ')
 		put_tex(&data->input->no_png, str);
-	else if (str[0] == 'S' && str[1] == 'O')
+	else if (str[0] == 'S' && str[1] == 'O' && str[2] == ' ')
 		put_tex(&data->input->so_png, str);
-	else if (str[0] == 'E' && str[1] == 'A')
+	else if (str[0] == 'E' && str[1] == 'A' && str[2] == ' ')
 		put_tex(&data->input->ea_png, str);
-	else if (str[0] == 'W' && str[1] == 'E')
+	else if (str[0] == 'W' && str[1] == 'E' && str[2] == ' ')
 		put_tex(&data->input->we_png, str);
 	else if (str[0] == 'C' && str[1] == ' ')
 		put_tex(&data->input->ceiling, str);

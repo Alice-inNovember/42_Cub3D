@@ -6,13 +6,14 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 17:09:31 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include "../../incs/util_bonus.h"
+#include "../../incs/data_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -90,5 +91,7 @@ int	ft_atoi(const char *str)
 		returni += str[i] - '0';
 		i++;
 	}
+	if (returni * sign > 255 || returni * sign < 0)
+		err_exit(E_COLORVERR);
 	return (returni * sign);
 }

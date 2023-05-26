@@ -1,7 +1,8 @@
 F 103,93,80
 C 103,93,80
 
-NO ./imgs/N.xpm
+
+NOs= ./imgs/N.xpm
 SO ./imgs/S.xpm
 WE ./imgs/W.xpm
 EA ./imgs/E.xpm

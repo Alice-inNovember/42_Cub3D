@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:41:04 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/26 10:00:05 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 17:09:33 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ int	ft_atoi(const char *str)
 		returni += str[i] - '0';
 		i++;
 	}
+	if (returni * sign > 255 || returni * sign < 0)
+		err_exit(E_COLORVERR);
 	return (returni * sign);
 }

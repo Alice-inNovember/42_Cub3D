@@ -6,11 +6,12 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 14:44:22 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:51:46 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 15:26:11 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/data_bonus.h"
+#include "../../incs/util_bonus.h"
 
 t_rgb	create_trgb(int t, int r, int g, int b)
 {

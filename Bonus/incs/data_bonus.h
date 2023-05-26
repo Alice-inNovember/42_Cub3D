@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 15:54:08 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/26 15:34:44 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@
 # define ON_DESTROY		17
 
 # define E_MAPVALID		"Error\nMap Vaildity Error"
+# define E_COLORVERR	"Error\nColor Value Error"
 # define E_ARGCNT		"Error\nArg Cnt Error"
 # define E_TEXTURED		"Error\nTexture Dup"
 # define E_EXETENSION	"Error\nEXETENSION (Map > .cub | Tex > .xpm)"
