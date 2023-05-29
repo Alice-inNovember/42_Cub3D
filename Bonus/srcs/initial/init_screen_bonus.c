@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:01:43 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/15 16:00:16 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/29 10:39:24 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	init_screen(t_data *data)
 {
-	data->screen->img = mlx_new_image(data->libx->mlx, 640, 480);
+	data->screen->img = mlx_new_image(data->libx->mlx, G_W, G_H);
 	data->screen->addr = mlx_get_data_addr(\
 						data->screen->img, \
 						&data->screen->bits_per_pixel, \

@@ -6,7 +6,7 @@
 /*   By: junlee2 <junlee2@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:04:51 by junlee2           #+#    #+#             */
-/*   Updated: 2023/05/26 15:34:44 by junlee2          ###   ########seoul.kr  */
+/*   Updated: 2023/05/29 10:46:31 by junlee2          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define RED 0
 # define GREEN 1
 # define BLUE 2
-# define G_W 640
-# define G_H 480
+# define G_W 800
+# define G_H 600
 # define IMG_W 64
 # define IMG_H 64
 # define E 0
