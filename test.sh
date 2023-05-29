@@ -1,5 +1,6 @@
 #!/bin/sh
 
+norminette Bonus/srcs Vanilla/srcs
 ./cub3D Map/Error0.cubb
 ./cub3D Map/Error1.cub
 ./cub3D Map/Error2.cub
