@@ -16,3 +16,7 @@
 ./cub3D Map/Error13.cub
 ./cub3D Map/Error14.cub
 ./cub3D Map/Error15.cub
+./cub3D Map/Map1.cub
+./cub3D Map/Map2.cub
+./cub3D Map/Map3.cub
+./cub3D Map/Map4.cub
